@@ -8,7 +8,32 @@ namespace DatTiecNhaHangTiecCuoi.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
+        public ActionResult Index() // trang chủ
+        {
+            return View();
+        }
+        public ActionResult Gioithieu()
+        {
+            return View();
+        }
+        public ActionResult SanhTiec()
+        {
+            return View();
+        }
+        public ActionResult Menu()
+        {
+            return View();
+        }
+        public ActionResult Trangtri()
+        {
+            return View();
+        }
+        public ActionResult DatTiec()
+        {
+
+            return View();
+        }
+        public ActionResult DangNhap()
         {
             return View();
         }

@@ -1,0 +1,270 @@
+﻿
+@{
+    ViewBag.Title = "Gioithieu";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .img_{
+           width: 100%;
+    }
+    h1 {
+        color: #e48908;
+        font-family: system-ui;
+        font-weight: bold;
+        margin-top: 50px;
+    }
+    .quyTrinh {
+        background-color: #b7e8f7;
+        border: 1px solid;
+        width: 93%;
+        height: 170px;
+        padding: 20px;
+        margin: 50px;
+        text-align: left;
+    }
+    h3{
+        color:#0660c5;
+        font-weight: bold;
+        padding: 20px 0px;
+    }
+    video {
+        width: 50%;
+        height: 300px;
+        padding: 10px;   
+        margin: 0 auto;
+
+    }
+    .khaimac {
+       
+        margin: 0 auto;
+    }
+    .slideshow-container {
+        position: relative;
+        width: 100%;
+        height: auto;
+    }
+
+    .slideshow {
+        display: flex;
+        overflow: hidden;
+        height: 296px;
+        width: 414px;
+    }
+
+        .slideshow img {
+            width: 100%;
+            height: auto;
+        }
+
+    .prev, .next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        padding: 16px;
+        color: white;
+        font-size: 24px;
+        cursor: pointer;
+        z-index: 1;
+    }
+
+    .prev {
+        left: 0;
+        /*margin: 0px -40px;*/
+        font-size: 33px;
+        font-weight: bold;
+        color: black;
+    }
+
+    .next {
+        right: 0;
+        /*margin: 0px -40px;*/
+        font-size: 33px;
+        font-weight: bold;
+        color: black;
+    }
+
+</style>
+<div>
+    <div>
+        <img class="img_" src="~/Image/GioiThieu/img_gioithieu.jpg" />
+    </div>
+    <div style="padding: 20px 20px;">
+        <div style="text-align: center;">
+            <h1>QUY TRÌNH TỔ CHỨC TIỆC CƯỚI TẠI NHÀ HÀNG</h1>
+            <div class="quyTrinh">
+                <p style="font-weight: bold;">CÁC QUY TRÌNH</p>
+                <div style=" cursor: pointer; margin-left: 20px;">
+                    <a href="#one">1. Đón khách</a><br />
+                    <a href="#two">2. Khai mạc chương trình nghi lễ cưới</a><br />
+                    <a href="#three">3. Đãi tiệc cưới</a><br />
+                    <a href="#four">4. Các tiết mục trong thời gian diễn tiệc</a><br />
+                    <a href="#five">5. Tiễn khách</a>
+                </div>
+            </div>
+        </div>
+
+        @*đón khách*@
+        <div>
+            <h3 id="one">ĐÓN KHÁCH</h3>
+            <p>
+                Đón khách chính là nghi thức lễ cưới tại nhà hàng đầu tiên cô dâu và chú rể sẽ phải thực hiện. Đây là cũng là bước đầu tiên trong quy trình tổ chức tiệc cưới của nhà hàng.
+                Cô dâu và chú rể phải đến nhà hàng tiệc cưới trước giờ khai tiệc ít nhất 2-3 tiếng đồng hồ. Trong đó dành ít nhất 1 tiếng để thay trang phục, trang điểm và trao đổi với lại nhân viên quản lý sảnh tiệc của mình.
+                <br />
+                Thời gian đón khách thường khoảng 1 giờ đồng hồ trước giờ khai tiệc. Khi khách đã được hướng dẫn ngồi vào bàn, tùy theo sắp xếp của bạn mà có thể yêu cầu nhà hàng phục vụ nước hay khoan phục vụ nước. Thông thường thì các nhà hàng thường có đặt một đĩa đồ ăn nhẹ như là đậu phộng hay snack cho khách ăn chơi trong quá trình chờ đợi khai mạc tiệc cưới.
+            </p>
+            <div style="width: 100%;">
+                <img src="~/Image/GioiThieu/donKhach/donkhach_1.jpg" style=" float: left; width: 50%; padding: 0px 10px; " />
+                <img src="~/Image/GioiThieu/donKhach/donkhach_2.jpg" style=" width: 50%; padding: 0px 10px;" />
+            </div>
+        </div>
+
+        @*Khai mạc lễ*@
+    <div style="width: 100%;">
+        <h3 id="two">KHAI MẠC CHƯƠNG TRÌNH NGHI LỄ CƯỚI</h3>
+        <p>
+            Khi buổi tiệc bắt đầu thì trước tiên là những nghi lễ sau:<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Đầu tiên là MC sẽ dẫn dắt, tuyên bố buổi tiệc bắt đầu, tiếp theo là mời bố mẹ của hai bên lên sân khấu<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Tiếp theo là cô dâu chú rể cùng bước vào hoặc là chú rể đã đứng sẵn trên sân khấu, còn cô dâu được bố dẫn vào lễ đường và trao cho chú rể.<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Sau đó đại diện hai bên sẽ phát biểu cảm ơn khách mời đã đến chung vui cùng gia đình.<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Nghi lễ tiếp theo là rót rượu, cắt bánh và trao nhẫn.<br />
+        </p>
+       
+        @*video*@
+        <!--<div class="khaimac">
+            <div class="slideshow-container">
+                <div class="col-lg-12 slideshow" style="display: flex; justify-content: center; align-items:center;">
+                    <img><iframe width="450" height="315" src="https://www.youtube.com/embed/xSgCB1u2CSI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style=" padding: 10px 10px;"></iframe> </img>
+                    <img><iframe width="450" height="315" src="https://www.youtube.com/embed/4ab8zyjgjlw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style=" padding: 10px 10px;"></iframe></img>
+                    <img> <iframe width="450" height="315" src="https://www.youtube.com/embed/4ab8zyjgjlw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style=" padding: 10px 10px;"></iframe></img>                    
+                </div>
+
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+
+        </div>-->
+
+        @*<table class="col-lg-12">
+            <tr>
+                <th class="col-lg-2" style="margin:10px;">
+                    <img src="~/Image/GioiThieu/nghiLe/le_1.jpg" />
+                </th>
+                <th class="col-lg-2" style="margin: 10px;">
+                    <img src="~/Image/GioiThieu/nghiLe/le_2.jpg" />
+                </th>
+                <th class="col-lg-2" style="margin: 10px;">
+                    <img src="~/Image/GioiThieu/nghiLe/le_3.jpg" />
+                </th>
+
+                <th class="col-lg-2" style="margin: 10px;">
+                    <img src="~/Image/GioiThieu/nghiLe/le_5.jpg" />
+                </th>
+            </tr>
+        </table>*@
+    <div class="col-lg-12" style="display: flex; justify-content: center; align-items:center;">
+        <iframe width="450" height="315" src="https://www.youtube.com/embed/xSgCB1u2CSI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style=" padding: 10px 10px;"></iframe>
+        @*hình ảnh*@
+        <div class="khaimac">
+            <div class="slideshow-container">
+                <div class="slideshow">
+                    <img src="~/Image/GioiThieu/nghiLe/le_1.jpg" />
+                    <img src="~/Image/GioiThieu/nghiLe/le_2.jpg" />
+                    <img src="~/Image/GioiThieu/nghiLe/le_3.jpg" />
+                    <img src="~/Image/GioiThieu/nghiLe/le_5.jpg" />
+                </div>
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+
+        </div>
+        <iframe width="450" height="315" src="https://www.youtube.com/embed/4ab8zyjgjlw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style=" padding: 10px 10px;"></iframe>
+        @*<iframe width="450" height="315" src="https://www.youtube.com/embed/b4vlZb30G44" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style=" padding: 10px 10px;"></iframe>*@
+    </div>
+    </div>
+
+        @*đãi tiệc*@
+        <div style="width:100%;">
+            <h3 id="three">ĐÃI TIỆC</h3>
+            <p>
+                Khi kết thúc các nghi lễ cần thiết thì sẽ đến phần đãi tiệc. Các bàn tiệc lúc này đã được bày biện đồ ăn đầy đủ để khách mời có thể thưởng thức.
+
+                Trong quá trình khách mời thưởng thức thì cô dâu chú rể và cha mẹ hai bên sẽ đi đến từng bàn để chào hỏi và cảm ơn mọi người đã đến.
+
+                Phần đãi tiệc sẽ diễn ra trong khoảng 1h- 2h hoặc lâu hơn tùy từng đám cưới.
+            </p>
+            <div style="margin: 0 auto; text-align: center ;padding: 0px 50px;">
+                <img src="~/Image/GioiThieu/daiTiec/daitiec.jpg" style="width: 45%; height: 300px; " />
+                <img src="~/Image/GioiThieu/daiTiec/daiTiec1.jpg" style="width: 45%; height: 300px;" />
+            </div>
+
+        </div>
+
+        @*các tiết mục*@
+        <div style="width:100%;">
+            <h3 id="four">CÁC TIẾT MỤC TRONG THỜI GIAN DIỄN TIỆC</h3>
+            <div>
+                <p>
+                    <b>MỘT SỐ TIẾT MỤC TRONG TIỆC</b><br />
+                    <ul>
+                        <li>Tiết mục hát karaoke</li>
+                        <li>Tiết mục chơi trò chơi</li>
+                        <li>Tiết mục tung hoa cưới</li>
+                        <li>Tiết mục tặng quà cưới</li>
+                    </ul>
+                </p>
+            </div>
+
+            <div style="padding: 20px 20px;">
+                <img src="~/Image/GioiThieu/daiTiec/daiTiec_2.jpg" style="width: 24%; height: 300px;" />
+                <img src="~/Image/GioiThieu/daiTiec/daiTiec3.jpg" style="width: 24%; height: 300px;" />
+                <img src="~/Image/GioiThieu/daiTiec/daiTiec4.jpg" style="width: 24%; height: 300px;" />
+                <img src="~/Image/GioiThieu/daiTiec/daiTiec5.jpg" style="width: 24%; height: 300px;" />
+            </div>
+        </div>
+
+        @*tiễn khách*@
+        <div style="width:100%;">
+            <h3 id="five">TIỄN KHÁCH</h3>
+            <div>
+                <p>
+                    Tiệc cưới sẽ chính thức kết thúc bằng món tráng miệng. Mặc dù vậy, rất nhiều khách đã bắt đầu ra về khi món kế cuối được phục vụ. Món kế cuối thường là những món như lẩu, mì xào hoặc cơm chiên … Do đó, khi nhà hàng chuẩn bị lên món kế cuối thì cô dâu, chú rể bắt đầu di chuyển đến vị trí trước cổng để tiễn khách là vừa.
+
+                    Khách dự tiệc cưới khi đến dự tiệc thì đi riêng lẻ theo từng gia đình. Nhưng khi ra về thường lại có xu hướng về theo từng nhóm lớn. Vì thế, thời gian tiễn khách cũng là thời gian quý giá để cô dâu và chú rể có thể chụp ảnh chung với các nhóm này. Bạn hãy yêu cầu thợ chụp ảnh chuẩn bị sẵn sàng để có thể chụp lại những bức ảnh lưu niệm trong ngày trọng đại của bạn.
+                    <br />
+                    <b>Lưu ý: </b><br />
+                    Một số tiệc cưới cô dâu và chú rể còn chuẩn bị cả những phần quà cám ơn gửi đến cho khách dự tiệc. Các phần quà này thường là những món quà nhỏ, có giá trị không lớn, chủ yếu là để lưu niệm cho khách. Nếu có kế hoạch phát quà cám ơn thì thời gian tiễn khách cũng là thời gian sẽ phát quà cho khách. Bạn hãy sắp xếp 1 người phụ trách thay mặt bạn phát quà để cô dâu, chú rể có thời gian chụp ảnh lưu niệm với mọi người.
+
+
+                </p>
+            </div>
+            <div>
+                <div style="padding: 20px 20px;">
+                    <img src="~/Image/GioiThieu/quaLuuNiem/qua1.jpg" style="width: 24%; height: 300px;"/>
+                    <img src="~/Image/GioiThieu/quaLuuNiem/qua2.jpg" style="width: 24%; height: 300px;"/>
+                    <img src="~/Image/GioiThieu/quaLuuNiem/qua3.jpg" style="width: 24%; height: 300px;"/>
+                    <img src="~/Image/GioiThieu/quaLuuNiem/qua4.jpg" style="width: 24%; height: 300px;"/>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function showSlides(n) {
+        let i;
+        const slides = document.getElementsByClassName("slideshow")[0].getElementsByTagName("img");
+        if (n > slides.length) { slideIndex = 1 }
+        if (n < 1) { slideIndex = slides.length }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slides[slideIndex - 1].style.display = "block";
+    }
+</script>

@@ -124,6 +124,32 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ChiTietDichVuTinhPhiEntity.cs" />
+    <Compile Include="Models\ChiTietDichVuUuDaiEntity.cs" />
+    <Compile Include="Models\ChiTietMenuEntity.cs" />
+    <Compile Include="Models\ChiTietNuocUongEntity.cs" />
+    <Compile Include="Models\ChiTietPhuThuDichVuEntity.cs" />
+    <Compile Include="Models\ChiTietPhuThuMonAnEntity.cs" />
+    <Compile Include="Models\ChiTietPhuThuNuocEntity.cs" />
+    <Compile Include="Models\DanhGiaEntity.cs" />
+    <Compile Include="Models\DatTiecEntity.cs" />
+    <Compile Include="Models\DichVuEntity.cs" />
+    <Compile Include="Models\DichVuTinhPhiEntity.cs" />
+    <Compile Include="Models\DichVuUuDaiEntity.cs" />
+    <Compile Include="Models\HoaDonEntity.cs" />
+    <Compile Include="Models\KhachHangEntity.cs" />
+    <Compile Include="Models\LichSanhTiecEntity.cs" />
+    <Compile Include="Models\LoaiDichVuEntity.cs" />
+    <Compile Include="Models\LoaiMonAnEntity.cs" />
+    <Compile Include="Models\LoaiNuocEntity.cs" />
+    <Compile Include="Models\MenuEntity.cs" />
+    <Compile Include="Models\MonAnEntity.cs" />
+    <Compile Include="Models\MonAnTrongMenuEntity.cs" />
+    <Compile Include="Models\NhanVienEntity.cs" />
+    <Compile Include="Models\NhanVienTrongTiecEntity.cs" />
+    <Compile Include="Models\NuocEntity.cs" />
+    <Compile Include="Models\PhuThuEntity.cs" />
+    <Compile Include="Models\SanhEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -144,6 +170,7 @@
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.bundle.js" />
@@ -152,6 +179,10 @@
     <Content Include="Scripts\bootstrap.esm.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -177,10 +208,15 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\DangNhap.cshtml" />
+    <Content Include="Views\Home\DatTiec.cshtml" />
+    <Content Include="Views\Home\Gioithieu.cshtml" />
+    <Content Include="Views\Home\Menu.cshtml" />
+    <Content Include="Views\Home\SanhTiec.cshtml" />
+    <Content Include="Views\Home\Trangtri.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />

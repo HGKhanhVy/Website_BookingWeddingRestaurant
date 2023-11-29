@@ -3,26 +3,96 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <!-- Fontawesome CDN Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css">
 
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+
+    <style>
+        #loginPopup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: #fff;
+            z-index: 1000;
+        }
+
+        /* Style cho làm mờ nền */
+        #blur {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: none;
+            z-index: 999;
+        }
+
+        /* Style cho các thành phần trong popup */
+        #loginPopup input {
+            margin-bottom: 10px;
+            width: 100%;
+            padding: 10px;
+        }
+
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        .popup-content {
+            padding: 20px;
+        }
+
+        .popup button {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
 </head>
 
 <body style="background-color:bisque;">
 
-    <div id="my_" style="width: 100%; height: 50px;  position:fixed; top: 0px; left: 0px; z-index: 999; ">
-        <div class="navbar-collapse collapse" style="padding: 0px; ">
+    <div id="my_" style="width: 100%; height: 50px; position: fixed; top: 0px; left: 0px; z-index: 999; display: flex">
+        <div class="navbar-collapse collapse" style="padding: 0px; display: flex">
 
-            <ul class="nav navbar-nav" style="width: 100%; font-weight: bold; display: flex; align-items: center; justify-content: center; ">                
-                <li style="padding: 7px 15px ;color:#c77408 ;font-size: 2.3rem;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin-left: -400px; margin-right:400px;">GRAND PALACE</li>
-               
+            <ul class="nav navbar-nav" style="width: 100%; font-weight: bold; display: flex; align-items: center; justify-content: center; ">
+                <li style="padding: 7px 15px ;color:#c77408 ;font-size: 2.3rem; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin-left: -400px; margin-right:400px;">GRAND PALACE</li>
+
                 <li>@Html.ActionLink("TRANG CHỦ", "Index", "Home")</li>
                 <li>@Html.ActionLink("GIỚI THIỆU", "Gioithieu", "Home")</li>
                 <li>@Html.ActionLink("SẢNH TIỆC", "SanhTiec", "Home")</li>
                 <li>@Html.ActionLink("MENU", "Menu", "Home")</li>
                 <li>@Html.ActionLink("TRANG TRÍ", "Trangtri", "Home")</li>
-                <li>@Html.ActionLink("ĐẶT TIỆC", "DatTiec", "Home")</li>
-                <li style="margin-left: 200px; margin-right: -400px;">@Html.ActionLink("ĐĂNG NHẬP", "DangNhap", "Home")</li>
+                <li>@Html.ActionLink("ĐẶT TIỆC", "DatTiec", "DatTiec")</li>
+                <li style="margin-left: 0px; margin-right: -400px;">
+                    @Html.ActionLink("Đăng Nhập", "DangNhap", "KhachHang", null, new { id = "btnLogin" })
+
+                </li>
             </ul>
         </div>
     </div>
@@ -34,8 +104,8 @@
     <footer style="background-color: burlywood;">
         <div style=" width: 100%; height: auto; text-align:center ; padding: 15px 15px; margin: auto; margin-bottom: -19px;">
             @*<div>
-                <img src="~/Image/logo_GP-removebg-preview.png" />
-            </div>*@
+                    <img src="~/Image/logo_GP-removebg-preview.png" />
+                </div>*@
             <p>
                 <b>TRUNG TÂM HỘI NGHỊ TIỆC CƯỚI GRAND PALACE</b><br />
                 Chi nhánh 2 Công Ty TNHH TM DV Dìn Ký<br />
@@ -80,5 +150,60 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+
+    <!-- Login popup -->
+    <div id="blur"></div>
+    <div style="width: 30%" id="loginPopup" class="popup">
+        <div class="popup-container">
+            <input type="checkbox" id="flip">
+            <div class="forms">
+                <div class="form-content">
+                    <div class="login-form">
+                        <div class="title">Login</div>
+                        <div class="close-btn" id="closePopup">X</div>
+                        <form action="/Login/Login" method="post">
+                            <div class="input-boxes">
+                                <div class="input-box">
+                                    @*<i style="color: #c77408;" class="fas fa-envelope"></i>*@
+                                    <input name="Sdt" type="text" placeholder="Số điện thoại" required>
+                                </div>
+                                <div class="input-box">
+                                    @*<i style="color: #c77408" class="fas fa-lock"></i>*@
+                                    <input name="matKhau" type="password" placeholder="Mật khẩu" required>
+                                </div>
+                                <div style="margin-left: 30px" class="text"><a href="#">Forgot password?</a></div>
+                                <p style="color:red">@ViewBag.LoginFail</p>
+                                <div class="button input-box">
+                                    <input type="submit" value="Login">
+                                </div>
+                                <div style="align-items: center" class="text sign-up-text">Don't have an account? <label for="flip">Sigup now</label></div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Sử dụng jQuery để xử lý sự kiện click của ActionLink
+        $('#btnLogin').on('click', function (e) {
+            e.preventDefault(); // Ngăn chặn hành động mặc định của liên kết
+            showLoginPopup();
+        });
+
+        function showLoginPopup() {
+            // Hiển thị popup và làm mờ nền
+            document.getElementById('loginPopup').style.display = 'block';
+            document.getElementById('blur').style.display = 'block';
+        }
+
+        function hideLoginPopup() {
+            // Ẩn popup và làm mờ nền
+            document.getElementById('loginPopup').style.display = 'none';
+            document.getElementById('blur').style.display = 'none';
+        }
+
+    </script>
 </body>
 </html>

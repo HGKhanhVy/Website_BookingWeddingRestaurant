@@ -4,15 +4,17 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <style>
-    .img_{
-           width: 100%;
+    .img_ {
+        width: 100%;
     }
+
     h1 {
         color: #e48908;
         font-family: system-ui;
         font-weight: bold;
         margin-top: 50px;
     }
+
     .quyTrinh {
         background-color: #b7e8f7;
         border: 1px solid;
@@ -22,22 +24,24 @@
         margin: 50px;
         text-align: left;
     }
-    h3{
-        color:#0660c5;
+
+    h3 {
+        color: #0660c5;
         font-weight: bold;
         padding: 20px 0px;
     }
+
     video {
         width: 50%;
         height: 300px;
-        padding: 10px;   
+        padding: 10px;
         margin: 0 auto;
+    }
 
-    }
     .khaimac {
-       
         margin: 0 auto;
     }
+
     .slideshow-container {
         position: relative;
         width: 100%;
@@ -82,7 +86,6 @@
         font-weight: bold;
         color: black;
     }
-
 </style>
 <div>
     <div>
@@ -119,68 +122,67 @@
         </div>
 
         @*Khai mạc lễ*@
-    <div style="width: 100%;">
-        <h3 id="two">KHAI MẠC CHƯƠNG TRÌNH NGHI LỄ CƯỚI</h3>
-        <p>
-            Khi buổi tiệc bắt đầu thì trước tiên là những nghi lễ sau:<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Đầu tiên là MC sẽ dẫn dắt, tuyên bố buổi tiệc bắt đầu, tiếp theo là mời bố mẹ của hai bên lên sân khấu<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Tiếp theo là cô dâu chú rể cùng bước vào hoặc là chú rể đã đứng sẵn trên sân khấu, còn cô dâu được bố dẫn vào lễ đường và trao cho chú rể.<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Sau đó đại diện hai bên sẽ phát biểu cảm ơn khách mời đã đến chung vui cùng gia đình.<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Nghi lễ tiếp theo là rót rượu, cắt bánh và trao nhẫn.<br />
-        </p>
-       
-        @*video*@
-        <!--<div class="khaimac">
-            <div class="slideshow-container">
-                <div class="col-lg-12 slideshow" style="display: flex; justify-content: center; align-items:center;">
-                    <img><iframe width="450" height="315" src="https://www.youtube.com/embed/xSgCB1u2CSI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style=" padding: 10px 10px;"></iframe> </img>
-                    <img><iframe width="450" height="315" src="https://www.youtube.com/embed/4ab8zyjgjlw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style=" padding: 10px 10px;"></iframe></img>
-                    <img> <iframe width="450" height="315" src="https://www.youtube.com/embed/4ab8zyjgjlw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style=" padding: 10px 10px;"></iframe></img>                    
+        <div style="width: 100%;">
+            <h3 id="two">KHAI MẠC CHƯƠNG TRÌNH NGHI LỄ CƯỚI</h3>
+            <p>
+                Khi buổi tiệc bắt đầu thì trước tiên là những nghi lễ sau:<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Đầu tiên là MC sẽ dẫn dắt, tuyên bố buổi tiệc bắt đầu, tiếp theo là mời bố mẹ của hai bên lên sân khấu<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Tiếp theo là cô dâu chú rể cùng bước vào hoặc là chú rể đã đứng sẵn trên sân khấu, còn cô dâu được bố dẫn vào lễ đường và trao cho chú rể.<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Sau đó đại diện hai bên sẽ phát biểu cảm ơn khách mời đã đến chung vui cùng gia đình.<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Nghi lễ tiếp theo là rót rượu, cắt bánh và trao nhẫn.<br />
+            </p>
+
+            @*video*@
+            <!--<div class="khaimac">
+                <div class="slideshow-container">
+                    <div class="col-lg-12 slideshow" style="display: flex; justify-content: center; align-items:center;">
+                        <img><iframe width="450" height="315" src="https://www.youtube.com/embed/xSgCB1u2CSI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style=" padding: 10px 10px;"></iframe> </img>
+                        <img><iframe width="450" height="315" src="https://www.youtube.com/embed/4ab8zyjgjlw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style=" padding: 10px 10px;"></iframe></img>
+                        <img> <iframe width="450" height="315" src="https://www.youtube.com/embed/4ab8zyjgjlw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style=" padding: 10px 10px;"></iframe></img>
+                    </div>
+
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
                 </div>
 
-                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                <a class="next" onclick="plusSlides(1)">&#10095;</a>
-            </div>
+            </div>-->
+            @*<table class="col-lg-12">
+                    <tr>
+                        <th class="col-lg-2" style="margin:10px;">
+                            <img src="~/Image/GioiThieu/nghiLe/le_1.jpg" />
+                        </th>
+                        <th class="col-lg-2" style="margin: 10px;">
+                            <img src="~/Image/GioiThieu/nghiLe/le_2.jpg" />
+                        </th>
+                        <th class="col-lg-2" style="margin: 10px;">
+                            <img src="~/Image/GioiThieu/nghiLe/le_3.jpg" />
+                        </th>
 
-        </div>-->
+                        <th class="col-lg-2" style="margin: 10px;">
+                            <img src="~/Image/GioiThieu/nghiLe/le_5.jpg" />
+                        </th>
+                    </tr>
+                </table>*@
+            <div class="col-lg-12" style="display: flex; justify-content: center; align-items:center;">
+                <iframe width="450" height="315" src="https://www.youtube.com/embed/xSgCB1u2CSI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style=" padding: 10px 10px;"></iframe>
+                @*hình ảnh*@
+                <div class="khaimac">
+                    <div class="slideshow-container">
+                        <div class="slideshow">
+                            <img src="~/Image/GioiThieu/nghiLe/le_1.jpg" />
+                            <img src="~/Image/GioiThieu/nghiLe/le_2.jpg" />
+                            <img src="~/Image/GioiThieu/nghiLe/le_3.jpg" />
+                            <img src="~/Image/GioiThieu/nghiLe/le_5.jpg" />
+                        </div>
+                        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                    </div>
 
-        @*<table class="col-lg-12">
-            <tr>
-                <th class="col-lg-2" style="margin:10px;">
-                    <img src="~/Image/GioiThieu/nghiLe/le_1.jpg" />
-                </th>
-                <th class="col-lg-2" style="margin: 10px;">
-                    <img src="~/Image/GioiThieu/nghiLe/le_2.jpg" />
-                </th>
-                <th class="col-lg-2" style="margin: 10px;">
-                    <img src="~/Image/GioiThieu/nghiLe/le_3.jpg" />
-                </th>
-
-                <th class="col-lg-2" style="margin: 10px;">
-                    <img src="~/Image/GioiThieu/nghiLe/le_5.jpg" />
-                </th>
-            </tr>
-        </table>*@
-    <div class="col-lg-12" style="display: flex; justify-content: center; align-items:center;">
-        <iframe width="450" height="315" src="https://www.youtube.com/embed/xSgCB1u2CSI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style=" padding: 10px 10px;"></iframe>
-        @*hình ảnh*@
-        <div class="khaimac">
-            <div class="slideshow-container">
-                <div class="slideshow">
-                    <img src="~/Image/GioiThieu/nghiLe/le_1.jpg" />
-                    <img src="~/Image/GioiThieu/nghiLe/le_2.jpg" />
-                    <img src="~/Image/GioiThieu/nghiLe/le_3.jpg" />
-                    <img src="~/Image/GioiThieu/nghiLe/le_5.jpg" />
                 </div>
-                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                <iframe width="450" height="315" src="https://www.youtube.com/embed/4ab8zyjgjlw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style=" padding: 10px 10px;"></iframe>
+                @*<iframe width="450" height="315" src="https://www.youtube.com/embed/b4vlZb30G44" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style=" padding: 10px 10px;"></iframe>*@
             </div>
-
         </div>
-        <iframe width="450" height="315" src="https://www.youtube.com/embed/4ab8zyjgjlw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style=" padding: 10px 10px;"></iframe>
-        @*<iframe width="450" height="315" src="https://www.youtube.com/embed/b4vlZb30G44" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style=" padding: 10px 10px;"></iframe>*@
-    </div>
-    </div>
 
         @*đãi tiệc*@
         <div style="width:100%;">
@@ -239,10 +241,10 @@
             </div>
             <div>
                 <div style="padding: 20px 20px;">
-                    <img src="~/Image/GioiThieu/quaLuuNiem/qua1.jpg" style="width: 24%; height: 300px;"/>
-                    <img src="~/Image/GioiThieu/quaLuuNiem/qua2.jpg" style="width: 24%; height: 300px;"/>
-                    <img src="~/Image/GioiThieu/quaLuuNiem/qua3.jpg" style="width: 24%; height: 300px;"/>
-                    <img src="~/Image/GioiThieu/quaLuuNiem/qua4.jpg" style="width: 24%; height: 300px;"/>
+                    <img src="~/Image/GioiThieu/quaLuuNiem/qua1.jpg" style="width: 24%; height: 300px;" />
+                    <img src="~/Image/GioiThieu/quaLuuNiem/qua2.jpg" style="width: 24%; height: 300px;" />
+                    <img src="~/Image/GioiThieu/quaLuuNiem/qua3.jpg" style="width: 24%; height: 300px;" />
+                    <img src="~/Image/GioiThieu/quaLuuNiem/qua4.jpg" style="width: 24%; height: 300px;" />
                 </div>
             </div>
 

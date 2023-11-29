@@ -77,3 +77,6 @@ D:\NhaHangTiecCuoi\DatTiecNhaHangTiecCuoi\DatTiecNhaHangTiecCuoi\bin\Microsoft.C
 D:\NhaHangTiecCuoi\DatTiecNhaHangTiecCuoi\DatTiecNhaHangTiecCuoi\obj\Debug\DatTiecNhaHangTiecCuoi.csproj.CopyComplete
 D:\NhaHangTiecCuoi\DatTiecNhaHangTiecCuoi\DatTiecNhaHangTiecCuoi\obj\Debug\DatTiecNhaHangTiecCuoi.dll
 D:\NhaHangTiecCuoi\DatTiecNhaHangTiecCuoi\DatTiecNhaHangTiecCuoi\obj\Debug\DatTiecNhaHangTiecCuoi.pdb
+D:\NhaHangTiecCuoi\DatTiecNhaHangTiecCuoi\DatTiecNhaHangTiecCuoi\bin\System.Net.Http.Extensions.dll
+D:\NhaHangTiecCuoi\DatTiecNhaHangTiecCuoi\DatTiecNhaHangTiecCuoi\bin\System.Net.Http.Formatting.dll
+D:\NhaHangTiecCuoi\DatTiecNhaHangTiecCuoi\DatTiecNhaHangTiecCuoi\bin\System.Net.Http.Primitives.dll

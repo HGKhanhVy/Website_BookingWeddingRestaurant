@@ -1,0 +1,146 @@
+﻿@using DatTiecNhaHangTiecCuoi.Models
+@model List<SanhEntity>
+@{
+    ViewBag.Title = "QuanLySanh";
+    Layout = "~/Views/Shared/Layout_QuanLy.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            border: none;
+        }
+
+        th, td {
+            border-bottom: 2px solid;
+            padding: 2px;
+            text-align: center;
+        }
+
+            th:not(:last-child),
+            td:not(:last-child) {
+                border-right: 1px solid;
+            }
+
+            th:first-child,
+            td:first-child {
+                text-align: left; /* Canh trái cho cột 1 và cột 2 */
+                width: 10%;
+            }
+
+            td:nth-child(2) {
+                text-align: left; /* Canh trái cho cột 1 và cột 2 */
+                width: 20%;
+            }
+
+            td:nth-child(3),
+            td:nth-child(4) {
+                width: 5%; /* Đặt tỷ lệ phần trăm cho từng ô td tại đây */
+            }
+
+            td:nth-child(5) {
+                width: 1%;
+            }
+
+
+        th, td {
+            text-align: center; /* Canh giữa cho title */
+            border-top: 1px solid;
+        }
+
+        button {
+            width: 50px; /* Đặt chiều rộng của nút là 100% */
+            height: 30px;
+            background-color: bisque;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div style="display: flex; justify-content: space-between; margin-bottom: 15px;">
+        <h1 style="margin: 0;">Danh sách Sảnh</h1>
+        <button style="width: 10%" onclick="Add()">Thêm</button>
+    </div>
+    <hr />
+    <table>
+        <thead>
+            <tr>
+                <th>Mã Sảnh</th>
+                <th>Tên Sảnh</th>
+                <th>Sức Chứa<br /> Tối Thiểu</th>
+                <th>Sức Chứa<br /> Tối Đa</th>
+                <th>Thao Tác</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var sanh in Model)
+            {
+                <tr>
+                    <td>@sanh.MaSanh</td>
+                    <td>@sanh.TenSanh</td>
+                    <td>@sanh.SucChuaToiThieu</td>
+                    <td>@sanh.SucChuaToiDa</td>
+                    <td>
+                        <table>
+                            <tr>
+                                <td style="border: none;">
+                                    <button onclick="Edit('@sanh.MaSanh')">Sửa</button>
+                                </td>
+                                <td style="border: none;">
+                                    <button onclick="Delete('@sanh.MaSanh')">Xóa</button>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        function Edit(MaSanh) {
+            window.location.href = '/QuanLy/SuaSanh?MaSanh=' + MaSanh;
+        }
+
+        function Add() {
+            window.location.href = '/QuanLy/ThemSanh'; 
+        }
+
+        function Delete(maSanh) {
+            var confirmDelete = confirm('Bạn có chắc muốn xóa sảnh này không?');
+            if (confirmDelete) {
+                // Sử dụng Ajax để gửi yêu cầu xóa
+                $.ajax({
+                    url: '/QuanLy/XoaSanh',
+                    type: 'POST',
+                    data: { maSanh: maSanh },
+                    success: function (result) {
+                        console.log(result);
+                    },
+                    error: function (error) {
+                        console.log(error);
+                    }
+                });
+                location.reload();
+            }
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,197 @@
+﻿@model DatTiecNhaHangTiecCuoi.Models.List_Loai_MonAn_Nuoc
+@{
+    ViewBag.Title = "GetDatNuoc";
+    Layout = "~/Views/Shared/Layout_DatTiec.cshtml";
+}
+
+
+<style>
+    .div_khung {
+        /*background-color: white;*/
+        width: 100%;
+    }
+
+    button {
+        background-color: darkred;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+        height: 30px;
+        border-radius: 10px;
+        color: white;
+        font-weight: bold;
+    }
+
+    .div_td {
+        width: 100%;
+        /*border-bottom: 1px solid;*/
+        margin: 5px 5px;
+        padding: 10px 10px;
+        background-color: white;
+        /*opacity: 0.9;
+        font-weight: bold;*/
+    }
+
+    .b_text {
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        color: white;
+        background-color: #c77408;
+    }
+
+    .hinh {
+        width: 100%;
+        height: 200px;
+    }
+
+    .gia {
+        color: white;
+        width: 100%;
+        font-weight: bold;
+        display: flex;
+        justify-content: left;
+        text-align: left;
+        padding-left: 10px;
+    }
+
+    .b_ten {
+        background-color: lightgoldenrodyellow;
+        color: brown;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        height: 50px;
+        /*padding: 10px;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        color: white;
+        background-color: #bead07;*/
+    }
+
+    .div_row {
+        margin-top: 30px;
+    }
+
+    .div_dongia {
+        background-color: #7d0304f2;
+        border-top-right-radius: 30px;
+        top: 0px;
+        width: 150px;
+        position: absolute;
+    }
+
+    .div_dongiaNuoc {
+        background-color: #7d0304f2;
+        border-top-right-radius: 30px;
+        top: 0px;
+        width: 200px;
+        position: absolute;
+    }
+
+    .image-container {
+        position: relative;
+    }
+</style>
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<div class="div_khung">
+    <div>
+        <b class="b_text">CÁC GÓI NƯỚC UỐNG</b>
+    </div>
+    <div class="row div_row">
+        @foreach (var item in Model.list_nuoc)
+        {
+            <div class="col-lg-4">
+                <div class="div_td">
+                    <div class="image-container">
+                        <img src="~/Image/AnhMonAn/@item.HinhAnh" class="hinh" />
+                        <div class="div_dongiaNuoc"><span class="formatted-number gia">@item.DonGia (VNĐ)/bàn</span></div>
+                    </div>
+                    <div class="b_ten">
+                        <b>@item.TenNuoc</b>
+
+                    </div>
+                    <button id="themNuoc" onclick="chonNuoc('@item.MaNuoc','@item.TenNuoc', '@item.HinhAnh', '@item.DonGia')">CHỌN</button>
+                </div>
+            </div>
+        }
+    </div>
+    <button id="LuuThongTin">LƯU THÔNG TIN NƯỚC UỐNG</button>
+</div>
+
+<script>
+    const numberElements = document.getElementsByClassName('formatted-number');
+
+    Array.from(numberElements).forEach((element) => {
+        const number = element.textContent;
+        const formattedNumber = addThousandsSeparator(number);
+        element.textContent = formattedNumber;
+    });
+
+    function addThousandsSeparator(number) {
+        const parts = number.toString().split('.');
+        parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+        return parts.join('.');
+    }
+</script>
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+    var selectedItems = [];
+    var daAnButtonLuuThongTin = false;
+
+    function chonNuoc(MaNuoc, TenNuoc, HinhAnh, DonGia) {
+        console.log('Button clicked. Adding to cart...');
+
+        var newItem = {
+            MaNuoc: MaNuoc,
+            TenNuoc: TenNuoc,
+            HinhAnh: HinhAnh,
+            DonGia: DonGia
+        };
+        selectedItems.push(newItem);
+
+        var button = document.getElementById('themNuoc');
+        button.disabled = true;
+    }
+
+    document.getElementById('LuuThongTin').addEventListener('click', sendToGioHangController);
+    function sendToGioHangController() {
+        console.log(selectedItems);
+
+        $.ajax({
+            type: 'POST',
+            url: '/GioHang/LuuThongTinNuoc',
+            contentType: 'application/json; charset=utf-8',
+            data: JSON.stringify({ selectedItems: selectedItems }),
+            success: function (response) {
+                console.log('Dữ liệu đã được gửi và lưu vào Session thành công:', response);
+            },
+            error: function (error) {
+                console.error('Lỗi khi gửi và lưu dữ liệu vào Session:', error);
+            }
+        });
+        daAnButtonLuuThongTin = true;
+    }
+    document.getElementById('LuuThongTin').onclick = function () {
+        alert("Thông tin nước đã được lưu.");
+    };
+
+    window.onbeforeunload = function () {
+        if (!daAnButtonLuuThongTin) {
+            var result = confirm("Bạn chưa lưu thông tin nước. Bạn có chắc muốn rời khỏi trang?");
+            return result ? undefined : "Bạn đã từ chối rời khỏi trang.";
+        }
+    };
+</script>
+

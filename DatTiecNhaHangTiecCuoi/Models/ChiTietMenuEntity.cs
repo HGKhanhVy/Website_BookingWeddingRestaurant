@@ -13,5 +13,6 @@ namespace DatTiecNhaHangTiecCuoi.Models
         public string MaMenu { get; set; }
         public int SoLuongMenuCuaTiec { get; set; }
         public double TongTien { get; set; }
+        public string TrangThai { get; set; }
     }
 }

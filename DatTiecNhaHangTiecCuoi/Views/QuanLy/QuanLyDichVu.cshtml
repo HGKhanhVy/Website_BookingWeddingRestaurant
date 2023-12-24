@@ -1,0 +1,170 @@
+﻿@using DatTiecNhaHangTiecCuoi.Models
+@model List<DichVuEntity>
+@{
+    ViewBag.Title = "QuanLyDichVu";
+    Layout = "~/Views/Shared/Layout_QuanLy.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            border: none;
+        }
+
+        th, td {
+            border-bottom: 2px solid;
+            padding: 2px;
+            text-align: center;
+        }
+
+            th:not(:last-child),
+            td:not(:last-child) {
+                border-right: 1px solid;
+            }
+
+            th:first-child,
+            td:first-child,
+            th:nth-child(2),
+            td:nth-child(2) {
+                text-align: left; /* Canh trái cho cột 1 và cột 2 */
+            }
+
+            td:nth-child(3),
+            td:nth-child(4),
+            td:nth-child(5) {
+                width: 9%; /* Đặt tỷ lệ phần trăm cho từng ô td tại đây */
+            }
+
+            td:nth-child(6) {
+                width: 5%;
+            }
+
+            td:nth-child(7){
+                width: 5%;
+            }
+        th, td {
+            text-align: center; /* Canh giữa cho title */
+            border-top: 1px solid;
+        }
+
+        button {
+            width: 50px; /* Đặt chiều rộng của nút là 100% */
+            height: 30px;
+            background-color: bisque;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div style="display: flex; justify-content: space-between; margin-bottom: 15px;">
+        <h1 style="margin: 0;">Danh sách Dịch Vụ</h1>
+        <button style="width: 10%" onclick="Add()">Thêm</button>
+    </div>
+    <hr />
+    <table>
+        <thead>
+            <tr>
+                <th>Tên Dịch Vụ</th>
+                <th>Mô Tả</th>
+                <th>Điều Kiện<br /> Áp Dụng <br />(Bàn)</th>
+                <th>Giá<br /> Trọn Gói</th>
+                <th>Giá<br /> Giảm 30%</th>
+                <th>Giá Lẻ</th>
+                <th style="width: 10px;">Thao Tác</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var dv in Model)
+            {
+                <tr>
+                    <td>@dv.TenDichVu</td>
+                    <td>@dv.MoTa</td>
+                    @if (@dv.DieuKienBanToiThieu == 0 && @dv.DieuKienBanToiDa == 0)
+                    {
+                        <td>0</td>
+                    }
+                    else
+                    {
+                        if (@dv.DieuKienBanToiDa == 1000)
+                        {
+                            <td>@dv.DieuKienBanToiThieu</td>
+                        }
+                        else
+                        {
+                            <td>@dv.DieuKienBanToiThieu - @dv.DieuKienBanToiDa</td>
+                        }
+                    }
+                    <td class="formatted-number gia">@dv.GiaTronGoi</td>
+                    <td class="formatted-number gia">@dv.GiaGiam30</td>
+                    <td class="formatted-number gia">@dv.GiaLe</td>
+                    <td>
+                        <table>
+                            <tr>
+                                <td style="border: none;">
+                                    <button onclick="Edit('@dv.MaDichVu')">Sửa</button>
+                                </td>
+                                <td style="border: none;">
+                                    <button onclick="Delete('@dv.MaDichVu')">Xóa</button>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        function Edit(MaDichVu) {
+            window.location.href = '/QuanLy/SuaDichVu?MaDichVu=' + MaDichVu;
+        }
+
+        function Add() {
+            window.location.href = '/QuanLy/ThemDichVu';
+        }
+
+        function Delete(maDichVu) {
+            var confirmDelete = confirm('Bạn có chắc muốn xóa Dịch Vụ này không?');
+            if (confirmDelete) {
+                // Sử dụng Ajax để gửi yêu cầu xóa
+                $.ajax({
+                    url: '/QuanLy/XoaDichVu',
+                    type: 'POST',
+                    data: { maDichVu: maDichVu },
+                    success: function (result) {
+                        console.log(result);
+                    },
+                    error: function (error) {
+                        console.log(error);
+                    }
+                });
+                location.reload();
+            }
+        }
+    </script>
+    <script>
+        const numberElements = document.getElementsByClassName('formatted-number');
+
+        Array.from(numberElements).forEach((element) => {
+            const number = element.textContent;
+            const formattedNumber = addThousandsSeparator(number);
+            element.textContent = formattedNumber;
+        });
+
+        function addThousandsSeparator(number) {
+            const parts = number.toString().split('.');
+            parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+            return parts.join('.');
+        }
+    </script>
+</body>
+</html>
+

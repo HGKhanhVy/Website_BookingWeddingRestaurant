@@ -1,0 +1,19 @@
+﻿@using DatTiecNhaHangTiecCuoi.Models
+@model KhachHangEntity
+
+@{
+    ViewBag.Title = "ThongTinKhachHang";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<body>
+    @if (TempData["KhachHang"] != null)
+    {
+        var khachHangEntity = TempData["KhachHang"] as KhachHangEntity;
+
+        <h2>Thông tin khách hàng</h2>
+        <p>Tên khách hàng: @khachHangEntity.TenKhachHang</p>
+        <p>Số điện thoại: @khachHangEntity.SoDienThoai</p>
+        <!-- Các thuộc tính khác của khách hàng -->
+    }
+</body>

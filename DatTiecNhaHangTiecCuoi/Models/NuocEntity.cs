@@ -16,5 +16,6 @@ namespace DatTiecNhaHangTiecCuoi.Models
         public string HinhAnh { get; set; }
         public double DonGia { get; set; }
         public string MaLoaiNuoc { get; set; }
+        public string TrangThai { get; set; }
     }
 }

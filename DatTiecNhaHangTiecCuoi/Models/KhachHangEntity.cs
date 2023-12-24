@@ -27,5 +27,6 @@ namespace DatTiecNhaHangTiecCuoi.Models
         [Required(ErrorMessage = "Email khong duoc de trong")]
         [EmailAddress(ErrorMessage = "Email khong hop le")]
         public string Gmail { get; set; }
+        public string MatKhau { get; set; }
     }
 }

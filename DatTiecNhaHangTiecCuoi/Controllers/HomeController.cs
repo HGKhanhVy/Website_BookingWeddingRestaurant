@@ -34,6 +34,10 @@ namespace DatTiecNhaHangTiecCuoi.Controllers
         {
             return View();
         }
+        public ActionResult UuDai()
+        {
+            return View();
+        }
         public ActionResult DatTiec()
         {
 

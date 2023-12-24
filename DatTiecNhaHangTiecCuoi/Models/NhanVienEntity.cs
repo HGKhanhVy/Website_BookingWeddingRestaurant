@@ -17,5 +17,9 @@ namespace DatTiecNhaHangTiecCuoi.Models
         public string CCCD { get; set; }
         public string Gmail { get; set; }
         public string NgayVaoLam { get; set; }
+        public string NgayNghiViec { get; set; }
+        public string MatKhau { get; set; }
+        public string TrangThai { get; set; }
+
     }
 }

@@ -1,0 +1,160 @@
+﻿@model DatTiecNhaHangTiecCuoi.Models.List_Loai_MonAn_Nuoc
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-xxxxxxxxxxxxx" crossorigin="anonymous" />
+</head>
+
+<style>
+    .menu {
+        float: left;
+        width: 15%;
+        height: 552px;
+        overflow-y: auto;
+    }
+
+        .menu ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+    .menu-heading {
+        display: block;
+        padding: 10px;
+        background-color: #c77408;
+        cursor: pointer;
+        color: #000000;
+        font-size: 16px;
+    }
+
+        .menu-heading i {
+            display: flex;
+            float: right;
+        }
+
+    .ul_ {
+        color: #000000;
+    }
+
+        .ul_ li {
+            cursor: pointer;
+            background-color: bisque;
+            padding: 6px 20px;
+            font-weight: bold;
+            border-bottom: 1px solid;
+        }
+    /*.ul {
+        display: none;
+        color: darkblue;
+    }
+
+        .submenu li {
+            padding-left: 20px;
+            cursor: pointer;
+            background-color: aqua;
+        }*/
+
+    .content {
+        margin-left: 220px;
+        background-color: #b6ff00;
+        overflow:auto;
+    }
+
+    .item-container {
+        display: none;
+    }
+
+    .content_right {
+        width: 84%;
+        height: 552px;
+        border: 1px solid;
+        float: right;
+        background-color: bisque;
+       
+    }
+    .image{
+        width:100px;
+        height: 100px;
+    }
+</style>
+
+
+
+<!-- Các span và div khác -->
+<div>
+    <div class="menu">
+        <ul>
+            <li>
+                <span class="toggle-span menu-heading" onclick="toggleItems(event, 'span1')"><b>MÓN ĂN</b><i>&#9660;</i></span>
+                <div id="span1-items" class="item-container">
+                    <div class="ul_">
+                        <ul>
+                            @foreach (var item in Model.list_loaimonan)
+                            {
+                                <li><i>&#x25B8;</i>&emsp;<a> @item.TenLoaiMon </a></li>
+
+                            }
+                        </ul>
+                    </div>
+                    <!-- Các item của Loại món ăn -->
+
+                </div>
+            </li>
+            <li>
+                <span class="toggle-span menu-heading" onclick="toggleItems(event, 'span2')"><b>ĐỒ UỐNG</b><i>&#9660;</i></span>
+                <div id="span2-items" class="item-container">
+                    <!-- Các item của Loại nước -->
+                    <ul class="ul_">
+                        @foreach (var item in Model.list_loainuoc)
+                        {
+                            <li><i>&#x25B8;</i>&emsp; @item.TenLoaiNuoc</li>
+                            @*@Html.ActionLink("GetAllMonAnById", "MonAn")*@
+                        }
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="content_right">
+       
+    </div>
+    <table class="table">
+        @foreach (var i in Model.list_monan)
+        {
+            <tr>
+                <th>@i.TenMonAn</th>
+                <th>@i.DonGia</th>
+            </tr>
+
+        }
+    </table>
+
+</div>
+</html>
+
+<script>
+    $(document).ready(function () {
+        $('.menu-heading').click(function () {
+            $(this).siblings('.submenu').slideToggle('fast');
+        });
+    });
+    function toggleItems(event, spanId) {
+        var spanItems = document.getElementById(spanId + '-items');
+        var allItemContainers = document.getElementsByClassName('item-container');
+
+        // Ẩn tất cả các div chứa các item
+        for (var i = 0; i < allItemContainers.length; i++) {
+            allItemContainers[i].style.display = 'none';
+        }
+
+        // Hiển thị div chứa các item của span được nhấn
+        spanItems.style.display = 'block';
+
+
+        // Ngăn chặn sự kiện click lan ra các phần tử cha
+        event.stopPropagation();
+    }
+
+</script>

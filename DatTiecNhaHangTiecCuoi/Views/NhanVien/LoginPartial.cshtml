@@ -1,0 +1,130 @@
+﻿
+<style>
+    #loginPopup {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 20px;
+        background-color: #fff;
+        z-index: 1000;
+    }
+
+    /* Style cho làm mờ nền */
+    #blur {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: none;
+        z-index: 999;
+    }
+
+    /* Style cho các thành phần trong popup */
+    #loginPopup input {
+        margin-bottom: 10px;
+        width: 100%;
+        padding: 10px;
+    }
+
+    .popup {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+    }
+
+    .popup-content {
+        padding: 20px;
+    }
+
+    .popup button {
+        background-color: #4CAF50;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+    }
+</style>
+
+<!-- Login popup -->
+<div id="blur"></div>
+<div style="width: 30%" id="loginPopup" class="popup">
+    <div class="popup-container">
+        <input type="checkbox" id="flip">
+        <div class="forms">
+            <div class="form-content">
+                <div class="login-form">
+                    <div class="title">Login</div>
+                    <div class="close-btn" id="closePopup">X</div>
+                    <form id="loginForm" action="@Url.Action("DangNhap", "NhanVien")" method="post">
+                        <div class="input-boxes">
+                            <div class="input-box">
+                                @*<i style="color: #c77408;" class="fas fa-envelope"></i>*@
+                                <input id="txtGmail" name="Gmail" type="text" placeholder="Gmail" required>
+                            </div>
+                            <div class="input-box">
+                                @*<i style="color: #c77408" class="fas fa-lock"></i>*@
+                                <input id="txtMatKhau" name="MatKhau" type="password" placeholder="Mật khẩu" required>
+                            </div>
+                            <div style="margin-left: 30px" class="text"><a href="#">Forgot password?</a></div>
+                            <p style="color:red">@ViewBag.LoginFail</p>
+                            <div class="button input-box">
+                                <input onclick="dangNhap()" type="submit" value="Login">
+                            </div>
+                            <div style="align-items: center" class="text sign-up-text">Don't have an account? <label for="flip">Sigup now</label></div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    // Sử dụng jQuery để xử lý sự kiện click của nút đăng nhập
+    function showLoginPopup() {
+        // Hiển thị popup và làm mờ nền
+        $('#loginPopup').show();
+        $('#blur').show();
+    }
+
+    // Sự kiện click cho nút đóng
+    $('#closePopup').click(function () {
+        // Ẩn cả popup và nền mờ khi click vào nút đóng
+        $('#loginPopup').hide();
+        $('#blur').hide();
+    });
+
+    // Bắt sự kiện submit của form đăng nhập
+    $('#loginForm').submit(function (e) {
+        e.preventDefault(); // Ngăn chặn submit mặc định của form
+        var form = $(this);
+        var url = form.attr('action');
+
+        // Lấy giá trị từ trường nhập Gmail và Mật khẩu
+        var gmailValue = $('#txtGmail').val();
+        var matKhauValue = $('#txtMatKhau').val();
+
+        $.ajax({
+            type: 'POST',
+            url: url,
+            data: { Gmail: gmailValue, MatKhau: matKhauValue },
+            success: function (data) {
+                $('#loginPopup').html(data);
+                showLoginPopup();
+            },
+            error: function (error) {
+                console.error(error);
+            }
+        });
+    });
+
+</script>

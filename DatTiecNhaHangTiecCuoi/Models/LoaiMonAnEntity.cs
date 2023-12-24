@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DatTiecNhaHangTiecCuoi.Models
 {
-    public class LoaiMonAnEntity 
+    public class LoaiMonAnEntity
     {
         public string MaLoaiMonAn { get; set; }
         public string TenLoaiMon { get; set; }

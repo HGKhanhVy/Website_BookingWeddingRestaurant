@@ -45,10 +45,106 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.AspNetCore.Authentication.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Authentication.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Authentication.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Authentication.Core, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Authentication.Core.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Authentication.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Authorization, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Authorization.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Authorization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Authorization.Policy, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Authorization.Policy.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Authorization.Policy.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Hosting.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Hosting.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Hosting.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Hosting.Server.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Hosting.Server.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Hosting.Server.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Http, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Http.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Http.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Http.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Http.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Http.Extensions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Http.Extensions.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Http.Features, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Http.Features.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Http.Features.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Mvc.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Mvc.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Mvc.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.ResponseCaching.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.ResponseCaching.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.ResponseCaching.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Routing, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Routing.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Routing.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Routing.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Routing.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Routing.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.WebUtilities, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.WebUtilities.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.WebUtilities.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.8.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.DotNet.PlatformAbstractions, Version=2.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.DotNet.PlatformAbstractions.2.1.0\lib\net45\Microsoft.DotNet.PlatformAbstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.Extensions.Configuration.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.2.2.0\lib\net461\Microsoft.Extensions.DependencyInjection.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.8.0.0\lib\net462\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyModel, Version=2.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyModel.2.1.0\lib\net451\Microsoft.Extensions.DependencyModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.FileProviders.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.FileProviders.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.Extensions.FileProviders.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Hosting.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Hosting.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.Extensions.Hosting.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.8.0.0\lib\net462\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.ObjectPool, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.ObjectPool.2.2.0\lib\netstandard2.0\Microsoft.Extensions.ObjectPool.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Options, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Options.2.2.0\lib\netstandard2.0\Microsoft.Extensions.Options.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Primitives.2.2.0\lib\netstandard2.0\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Net.Http.Headers, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.Headers.2.2.0\lib\netstandard2.0\Microsoft.Net.Http.Headers.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.4.5.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
     <Reference Include="System.Data" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.5.0\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
     <Reference Include="System.Net" />
     <Reference Include="System.Net.Http, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Net.Http.2.0.20126.16343\lib\net40\System.Net.Http.dll</HintPath>
@@ -68,6 +164,24 @@
       <HintPath>..\packages\System.Net.Http.2.0.20126.16343\lib\net40\System.Net.Http.WebRequest.dll</HintPath>
       <Private>True</Private>
       <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.0.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.4.5.0\lib\netstandard2.0\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -136,9 +250,17 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\DatMonAnController.cs" />
     <Compile Include="Controllers\DatTiecController.cs" />
+    <Compile Include="Controllers\GioHangController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KhachHangController.cs" />
+    <Compile Include="Controllers\LichSanhController.cs" />
+    <Compile Include="Controllers\LoaiDichVuController.cs" />
+    <Compile Include="Controllers\Loai_MonAn_NuocController.cs" />
+    <Compile Include="Controllers\MonAn_MenuController.cs" />
+    <Compile Include="Controllers\NhanVienController.cs" />
+    <Compile Include="Controllers\QuanLyController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -150,24 +272,34 @@
     <Compile Include="Models\ChiTietPhuThuMonAnEntity.cs" />
     <Compile Include="Models\ChiTietPhuThuNuocEntity.cs" />
     <Compile Include="Models\DanhGiaEntity.cs" />
+    <Compile Include="Models\DanhSachDaChon.cs" />
     <Compile Include="Models\DatTiecEntity.cs" />
     <Compile Include="Models\DichVuEntity.cs" />
+    <Compile Include="Models\DichVuTinhPhiDaChon.cs" />
     <Compile Include="Models\DichVuTinhPhiEntity.cs" />
     <Compile Include="Models\DichVuUuDaiEntity.cs" />
     <Compile Include="Models\HoaDonEntity.cs" />
     <Compile Include="Models\KhachHangEntity.cs" />
     <Compile Include="Models\LichSanhTiecEntity.cs" />
+    <Compile Include="Models\ListThongTinDatTiec.cs" />
+    <Compile Include="Models\List_LichSanh_Sanh.cs" />
+    <Compile Include="Models\List_LoaiDichVu_DichVu.cs" />
+    <Compile Include="Models\List_Loai_MonAn_Nuoc.cs" />
     <Compile Include="Models\LoaiDichVuEntity.cs" />
     <Compile Include="Models\LoaiMonAnEntity.cs" />
     <Compile Include="Models\LoaiNuocEntity.cs" />
     <Compile Include="Models\MenuEntity.cs" />
+    <Compile Include="Models\MonAnDaChon.cs" />
     <Compile Include="Models\MonAnEntity.cs" />
     <Compile Include="Models\MonAnTrongMenuEntity.cs" />
+    <Compile Include="Models\MonAn_Menu.cs" />
     <Compile Include="Models\NhanVienEntity.cs" />
     <Compile Include="Models\NhanVienTrongTiecEntity.cs" />
+    <Compile Include="Models\NuocDaChon.cs" />
     <Compile Include="Models\NuocEntity.cs" />
     <Compile Include="Models\PhuThuEntity.cs" />
     <Compile Include="Models\SanhEntity.cs" />
+    <Compile Include="Models\ThongTinDatTiec.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -194,6 +326,243 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Image\AnhGoiTrangTri\better.png" />
+    <Content Include="Image\AnhGoiTrangTri\forget.jpg" />
+    <Content Include="Image\AnhGoiTrangTri\just a moment.jpg" />
+    <Content Include="Image\AnhGoiTrangTri\justamoment.jpg" />
+    <Content Include="Image\AnhGoiTrangTri\oceanoflove.jpg" />
+    <Content Include="Image\AnhGoiTrangTri\tiamo.jpg" />
+    <Content Include="Image\AnhGoiTrangTri\when love.jpg" />
+    <Content Include="Image\AnhGoiTrangTri\whenlove.jpg" />
+    <Content Include="Image\AnhMonAn\BanhManKhaiVi\BaguetteSeafoodCheese.jpg" />
+    <Content Include="Image\AnhMonAn\BanhManKhaiVi\CroissantCheese.jpg" />
+    <Content Include="Image\AnhMonAn\BanhManKhaiVi\DanishChicken&amp;Cheese.jpg" />
+    <Content Include="Image\AnhMonAn\BanhManKhaiVi\DanishHam.jpg" />
+    <Content Include="Image\AnhMonAn\BanhManKhaiVi\PateChaud.jpg" />
+    <Content Include="Image\AnhMonAn\BanhManKhaiVi\PuffBacon&amp;corn.jpg" />
+    <Content Include="Image\AnhMonAn\banner.jpg" />
+    <Content Include="Image\AnhMonAn\banner_menu1.jpg" />
+    <Content Include="Image\AnhMonAn\banner_menu2.jpg" />
+    <Content Include="Image\AnhMonAn\banner_menu3.jpg" />
+    <Content Include="Image\AnhMonAn\banner_menu4.jpg" />
+    <Content Include="Image\AnhMonAn\banner_trangtri.jpg" />
+    <Content Include="Image\AnhMonAn\ComMiBunMien\bun_xao_singapore.jpg" />
+    <Content Include="Image\AnhMonAn\ComMiBunMien\com_chien_bao_ngu.jpg" />
+    <Content Include="Image\AnhMonAn\ComMiBunMien\com_chien_ca_tuyet_XO.jpg" />
+    <Content Include="Image\AnhMonAn\ComMiBunMien\com_chien_gac_ga_dut-lo_confit.jpg" />
+    <Content Include="Image\AnhMonAn\ComMiBunMien\com_chien_ga_quay_la_e.jpg" />
+    <Content Include="Image\AnhMonAn\ComMiBunMien\com_chien_hai_san_sa_te_mang_tay.jpg" />
+    <Content Include="Image\AnhMonAn\ComMiBunMien\com_chien_hai_san_thai_lan.jpg" />
+    <Content Include="Image\AnhMonAn\ComMiBunMien\com_chien_hai_san_tuong_XO.jpg" />
+    <Content Include="Image\AnhMonAn\ComMiBunMien\com_chien_tom_trung_muoi.jpg" />
+    <Content Include="Image\AnhMonAn\ComMiBunMien\com_ga_dut_lo_pho_mai_cay.jpg" />
+    <Content Include="Image\AnhMonAn\ComMiBunMien\mi_udon_ga_kieu_han_quoc.jpg" />
+    <Content Include="Image\AnhMonAn\ComMiBunMien\mi_udon_ga_kung_pao.jpg" />
+    <Content Include="Image\AnhMonAn\ComMiBunMien\mi_xao_tam_to.jpg" />
+    <Content Include="Image\AnhMonAn\ComMiBunMien\mi_xao_thuong_hang.jpg" />
+    <Content Include="Image\AnhMonAn\ComMiBunMien\mi_xao_xi_dau_than_heo_chien_gion.jpg" />
+    <Content Include="Image\AnhMonAn\KhaiViHaiMon\bacon_cuon_khoai_tay_my.jpg" />
+    <Content Include="Image\AnhMonAn\KhaiViHaiMon\banh_bap_hai_san.jpg" />
+    <Content Include="Image\AnhMonAn\KhaiViHaiMon\bo_my_cuon_vem_newzealand.jpg" />
+    <Content Include="Image\AnhMonAn\KhaiViHaiMon\ca_hoi_trai_cay_xot.jpg" />
+    <Content Include="Image\AnhMonAn\KhaiViHaiMon\cha_cua_chien_gion.png" />
+    <Content Include="Image\AnhMonAn\KhaiViHaiMon\cha_ga_chien_xu.jpg" />
+    <Content Include="Image\AnhMonAn\KhaiViHaiMon\cha_gio_grand_palace.jpg" />
+    <Content Include="Image\AnhMonAn\KhaiViHaiMon\cha_gio_hau_sua.png" />
+    <Content Include="Image\AnhMonAn\KhaiViHaiMon\cha_muc_ha_long.jpg" />
+    <Content Include="Image\AnhMonAn\KhaiViHaiMon\cha_sun_chien_gion.jpg" />
+    <Content Include="Image\AnhMonAn\KhaiViHaiMon\cha_thanh_cua_sot_bao_ngu.jpg" />
+    <Content Include="Image\AnhMonAn\KhaiViHaiMon\goi-cu_hu_tom_cang_so_diep.jpg" />
+    <Content Include="Image\AnhMonAn\KhaiViHaiMon\goi_bo_kieu_thai.jpg" />
+    <Content Include="Image\AnhMonAn\KhaiViHaiMon\goi_cu_hu_dua_tom_thit.jpg" />
+    <Content Include="Image\AnhMonAn\KhaiViHaiMon\goi_ga_nuong.jpg" />
+    <Content Include="Image\AnhMonAn\KhaiViHaiMon\goi_hai_san_rong_bien_thai_lan.jpg" />
+    <Content Include="Image\AnhMonAn\KhaiViHaiMon\goi_muc_thai_lan.jpg" />
+    <Content Include="Image\AnhMonAn\KhaiViHaiMon\goi_ngo_sen_tom_thit.jpg" />
+    <Content Include="Image\AnhMonAn\KhaiViHaiMon\goi_oc-giac_ngu_sac.jpg" />
+    <Content Include="Image\AnhMonAn\KhaiViHaiMon\goi_tom_thai_tay_thi.jpg" />
+    <Content Include="Image\AnhMonAn\KhaiViHaiMon\goi_vit_quay_kieu_trieu_chau.jpg" />
+    <Content Include="Image\AnhMonAn\KhaiViHaiMon\khoai_tay_my_hai_san_dut_lo.jpg" />
+    <Content Include="Image\AnhMonAn\KhaiViHaiMon\muc_chien_gion.jpg" />
+    <Content Include="Image\AnhMonAn\KhaiViHaiMon\muc_vien_bao_trung_muoi.jpg" />
+    <Content Include="Image\AnhMonAn\KhaiViHaiMon\salad_bo_my_xot.jpg" />
+    <Content Include="Image\AnhMonAn\KhaiViHaiMon\salad_ga_quay.png" />
+    <Content Include="Image\AnhMonAn\KhaiViHaiMon\salad_hai_san_kieu_nhat.jpg" />
+    <Content Include="Image\AnhMonAn\KhaiViHaiMon\salad_so_diep_trung_muoi.jpg" />
+    <Content Include="Image\AnhMonAn\KhaiViHaiMon\salad_uc_vit_xot_me_tieu_den.jpg" />
+    <Content Include="Image\AnhMonAn\KhaiViHaiMon\so_diep_hokaido_dut_lo_pho_mai.png" />
+    <Content Include="Image\AnhMonAn\KhaiViHaiMon\so_diep_nhat_xot_mayonaise.png" />
+    <Content Include="Image\AnhMonAn\KhaiViHaiMon\tom_chien_gion_sot_wasabi.jpg" />
+    <Content Include="Image\AnhMonAn\Lau\lau_bo_my_hoa_thanh_long.jpg" />
+    <Content Include="Image\AnhMonAn\Lau\lau_ca_tam_chua_cay.jpg" />
+    <Content Include="Image\AnhMonAn\Lau\lau_do_kieu_hongkong.jpg" />
+    <Content Include="Image\AnhMonAn\Lau\lau_ga_ham_nguu_bang.jpg" />
+    <Content Include="Image\AnhMonAn\Lau\lau_ga_kieu_nhat.jpg" />
+    <Content Include="Image\AnhMonAn\Lau\lau_ga_tiem_ot_hiem.jpg" />
+    <Content Include="Image\AnhMonAn\Lau\lau_hai_san_cua_dong.jpg" />
+    <Content Include="Image\AnhMonAn\Lau\lau_hai_san_kieu_nhat.jpg" />
+    <Content Include="Image\AnhMonAn\Lau\lau_hai_san_rong_bien.jpg" />
+    <Content Include="Image\AnhMonAn\Lau\lau_hai_san_sate.jpg" />
+    <Content Include="Image\AnhMonAn\Lau\lau_hai_san_thai_lan.jpg" />
+    <Content Include="Image\AnhMonAn\Lau\lau_nam_vit_quay_tu_xuyen.jpg" />
+    <Content Include="Image\AnhMonAn\Lau\lau_rong_bien_nguu_bang.jpg" />
+    <Content Include="Image\AnhMonAn\Lau\lau_tom_cang_thai_lan.jpg" />
+    <Content Include="Image\AnhMonAn\Lau\lau_tom_thai_lan.jpg" />
+    <Content Include="Image\AnhMonAn\Lau\lau_trai_cay_thuong_hang.jpg" />
+    <Content Include="Image\AnhMonAn\Lau\lau_tu_buu_bong_atiso_do.jpg" />
+    <Content Include="Image\AnhMonAn\Lau\lau_vuong_quoc_nam.jpg" />
+    <Content Include="Image\AnhMonAn\MonAnKem\cai_non_hongkong_xot_dau_hao.jpg" />
+    <Content Include="Image\AnhMonAn\MonAnKem\cai_ro_hai_sam_gan_nai_ham_XO.jpg" />
+    <Content Include="Image\AnhMonAn\MonAnKem\dau_hu_trung_hai_san.jpg" />
+    <Content Include="Image\AnhMonAn\MonAnKem\mang_tay_xao.jpg" />
+    <Content Include="Image\AnhMonAn\MonAnKem\nam_dong_co_xot_thuong_hang.jpg" />
+    <Content Include="Image\AnhMonAn\MonAnKem\nam_moi_xot_bao_ngu.jpg" />
+    <Content Include="Image\AnhMonAn\MonBoDaDieu\bap_bo_ham_warnut_trufle.jpg" />
+    <Content Include="Image\AnhMonAn\MonBoDaDieu\bap_bo_uc_ham_nam_huong_warnut_trufle_banh_mi.jpg" />
+    <Content Include="Image\AnhMonAn\MonBoDaDieu\bo_ham_dau_chickpeaks.jpg" />
+    <Content Include="Image\AnhMonAn\MonBoDaDieu\bo_ham_dau_ngu.jpg" />
+    <Content Include="Image\AnhMonAn\MonBoDaDieu\bo_ham_hat_de_nho_kho.jpg" />
+    <Content Include="Image\AnhMonAn\MonBoDaDieu\bo_ham_hoisin.jpg" />
+    <Content Include="Image\AnhMonAn\MonBoDaDieu\bo_ham_ruou_vang.jpg" />
+    <Content Include="Image\AnhMonAn\MonBoDaDieu\bo_ham_tieu_xanh.jpg" />
+    <Content Include="Image\AnhMonAn\MonBoDaDieu\bo_my_dut_lo_xot_kem_sa.jpg" />
+    <Content Include="Image\AnhMonAn\MonBoDaDieu\bo_uc_ham_tao_do.jpg" />
+    <Content Include="Image\AnhMonAn\MonBoDaDieu\bo_uc_nau_ruou_porto.jpg" />
+    <Content Include="Image\AnhMonAn\MonBoDaDieu\bo_uc_xot_tieu_den.jpg" />
+    <Content Include="Image\AnhMonAn\MonBoDaDieu\de_suon_bo_ham_hat_de.jpg" />
+    <Content Include="Image\AnhMonAn\MonBoDaDieu\suon_bo_ham_pamasam_cheese.jpg" />
+    <Content Include="Image\AnhMonAn\MonBoDaDieu\suon_bo_my_bbq.jpg" />
+    <Content Include="Image\AnhMonAn\MonBoDaDieu\suon_bo_my_ham_bbq_han_quoc.jpg" />
+    <Content Include="Image\AnhMonAn\MonBoDaDieu\suon_bo_uc_ham_dau_chickpeas.jpg" />
+    <Content Include="Image\AnhMonAn\MonCa\ca_bong_mu-hap_hongkong.jpg" />
+    <Content Include="Image\AnhMonAn\MonCa\ca_bong_mu_xot_chua_ngot.jpg" />
+    <Content Include="Image\AnhMonAn\MonCa\ca_bon_tuyet_xot_mo.jpg" />
+    <Content Include="Image\AnhMonAn\MonCa\ca_bop_dut_lo_xot_teriyaki.jpg" />
+    <Content Include="Image\AnhMonAn\MonCa\ca_bop_hap_xi_dau_dac_biet.jpg" />
+    <Content Include="Image\AnhMonAn\MonCa\ca_chem_chien_gion_xot_chanh_day.jpg" />
+    <Content Include="Image\AnhMonAn\MonCa\ca_chem_chien_gion_xot_harissa_mayonaise.jpg" />
+    <Content Include="Image\AnhMonAn\MonCa\ca_chem_chien_gion_xot_hibiscus.jpg" />
+    <Content Include="Image\AnhMonAn\MonCa\ca_chem_chien_gion_xot_mo_tay_bac.jpg" />
+    <Content Include="Image\AnhMonAn\MonCa\ca_chem_chien_gion_xot_thousand_island.jpg" />
+    <Content Include="Image\AnhMonAn\MonCa\ca_chem_file_xot_lemon_spicy.jpg" />
+    <Content Include="Image\AnhMonAn\MonCa\ca_chem_file_xot_mayonaisse_chanh_day.jpg" />
+    <Content Include="Image\AnhMonAn\MonCa\ca_chem_xot_xi_muoi.jpg" />
+    <Content Include="Image\AnhMonAn\MonCa\ca_gion_nga_xot_hoang_kim.png" />
+    <Content Include="Image\AnhMonAn\MonCa\ca_hoi_dut_lo_xot_mayonaise_trung_tom.jpg" />
+    <Content Include="Image\AnhMonAn\MonCa\ca_hoi_phi_le_nuong_pho_mai.jpg" />
+    <Content Include="Image\AnhMonAn\MonCa\ca_mu_dai_hap_nam_xot_tu_vi.jpg" />
+    <Content Include="Image\AnhMonAn\MonCa\ca_mu_dai_nuong_la_e.jpg" />
+    <Content Include="Image\AnhMonAn\MonCa\ca_mu_hap_trung_hoa-thao.jpg" />
+    <Content Include="Image\AnhMonAn\MonCa\ca_tam_dai_bbq_sate_hongkong.jpg" />
+    <Content Include="Image\AnhMonAn\MonCa\ca_tam_dai_luc_lac.jpg" />
+    <Content Include="Image\AnhMonAn\MonCa\ca_tam_nuong_sate.jpg" />
+    <Content Include="Image\AnhMonAn\MonCa\ca_tam_phi_le_hap_hongkong.jpg" />
+    <Content Include="Image\AnhMonAn\MonCa\ca_tam_phi_le_nuong_pho_mai.jpg" />
+    <Content Include="Image\AnhMonAn\MonCa\ca_tuyet_dut_lo_xot_sate.jpg" />
+    <Content Include="Image\AnhMonAn\MonCa\ca_tuyet_xot_mo_tay_bac.jpg" />
+    <Content Include="Image\AnhMonAn\MonCua\cua_lot_hoang_kim.jpg" />
+    <Content Include="Image\AnhMonAn\MonCua\cua_lot_rang_muoi_hongkong.jpg" />
+    <Content Include="Image\AnhMonAn\MonCua\cua_lot_xot_chanh_day.jpg" />
+    <Content Include="Image\AnhMonAn\MonGaVitBoCau\bo_cau_quay.jpg" />
+    <Content Include="Image\AnhMonAn\MonGaVitBoCau\ga_dut_lo_teriyaki.jpg" />
+    <Content Include="Image\AnhMonAn\MonGaVitBoCau\ga_dut_lo_xot_shoyo_kieu_hawai.jpg" />
+    <Content Include="Image\AnhMonAn\MonGaVitBoCau\ga_ham_nam_dong_co.jpg" />
+    <Content Include="Image\AnhMonAn\MonGaVitBoCau\ga_quay_hongkong.jpg" />
+    <Content Include="Image\AnhMonAn\MonGaVitBoCau\ga_quay_la_e_trang.jpg" />
+    <Content Include="Image\AnhMonAn\MonGaVitBoCau\ga_quay_pho_mai_cay.jpg" />
+    <Content Include="Image\AnhMonAn\MonGaVitBoCau\ga_quay_sate_hongkong.jpg" />
+    <Content Include="Image\AnhMonAn\MonGaVitBoCau\ga_tiem_ngu_qua.jpg" />
+    <Content Include="Image\AnhMonAn\MonGaVitBoCau\mi_udon_vit_nau_cham.jpg" />
+    <Content Include="Image\AnhMonAn\MonGaVitBoCau\uc_vit_xot_ruou_porto.jpg" />
+    <Content Include="Image\AnhMonAn\MonGaVitBoCau\vit_quay_kim_linh.jpg" />
+    <Content Include="Image\AnhMonAn\MonGaVitBoCau\vit_quay_mac_mat.jpg" />
+    <Content Include="Image\AnhMonAn\MonGaVitBoCau\vit_quay_van_dinh.jpg" />
+    <Content Include="Image\AnhMonAn\MonGaVitBoCau\vit_tiem_bat_buu.jpg" />
+    <Content Include="Image\AnhMonAn\MonHeo\gio_heo_bbq_gion_salad.png" />
+    <Content Include="Image\AnhMonAn\MonHeo\gio_heo_ham_toc_tien.jpg" />
+    <Content Include="Image\AnhMonAn\MonHeo\gio_heo_muoi_chien_gion.jpg" />
+    <Content Include="Image\AnhMonAn\MonHeo\heo_sua_quay_1_2 _con.jpg" />
+    <Content Include="Image\AnhMonAn\MonHeo\heo_sua_quay_1_con.jpg" />
+    <Content Include="Image\AnhMonAn\MonHeo\huong_cam_suon_quy_phi.jpg" />
+    <Content Include="Image\AnhMonAn\MonHeo\suon_dut_lo_xot_tieu_xanh.jpg" />
+    <Content Include="Image\AnhMonAn\MonHeo\suon_heo_bbq_han_quoc_nam_kim_cham_chien.jpg" />
+    <Content Include="Image\AnhMonAn\MonHeo\suon_heo_bbq_xot_cay.jpg" />
+    <Content Include="Image\AnhMonAn\MonHeo\suon_heo_bbq_xot_cherry.jpg" />
+    <Content Include="Image\AnhMonAn\MonHeo\suon_heo_bbq_xot_me.jpg" />
+    <Content Include="Image\AnhMonAn\MonHeo\suon_heo_bbq_xot_thai.jpg" />
+    <Content Include="Image\AnhMonAn\MonHeo\suon_heo_ham_dau_chickpeaks.jpg" />
+    <Content Include="Image\AnhMonAn\MonHeo\suon_non_xoc_toi_ot.jpg" />
+    <Content Include="Image\AnhMonAn\MonSoup\bi_bo_baby_tiem_tu_buu.jpg" />
+    <Content Include="Image\AnhMonAn\MonSoup\sup_bao_ngu_vi_ca_uyen_uong.jpg" />
+    <Content Include="Image\AnhMonAn\MonSoup\sup_bi_do_hai_san_rong_bien.png" />
+    <Content Include="Image\AnhMonAn\MonSoup\sup_ca_hoi_so_diep.jpg" />
+    <Content Include="Image\AnhMonAn\MonSoup\sup_ga_dong_trung_thao.jpg" />
+    <Content Include="Image\AnhMonAn\MonSoup\sup_hai_san_phat_tai.jpg" />
+    <Content Include="Image\AnhMonAn\MonSoup\sup_hai_san_rong_bien.jpg" />
+    <Content Include="Image\AnhMonAn\MonSoup\sup_hai_san_rong_bien_trung_tom.jpg" />
+    <Content Include="Image\AnhMonAn\MonSoup\sup_hai_san_toc_tien.png" />
+    <Content Include="Image\AnhMonAn\MonSoup\sup_hai_san_tu_xuyen.jpg" />
+    <Content Include="Image\AnhMonAn\MonSoup\sup_phuong_hoang_tu_vi.jpg" />
+    <Content Include="Image\AnhMonAn\MonSoup\sup_son_hau_hai_vi.jpg" />
+    <Content Include="Image\AnhMonAn\MonSoup\sup_so_diep_hai_sam.jpg" />
+    <Content Include="Image\AnhMonAn\MonSoup\sup_suon_dong_trung_thao.jpg" />
+    <Content Include="Image\AnhMonAn\MonSoup\sup_tam_to_hong_xiu.jpg" />
+    <Content Include="Image\AnhMonAn\MonSoup\sup_tuyet_nhi_cua_ga.png" />
+    <Content Include="Image\AnhMonAn\MonSoup\sup_uyen_uong_rong_bien.jpg" />
+    <Content Include="Image\AnhMonAn\MonSoup\sup_vi_ca.jpg" />
+    <Content Include="Image\AnhMonAn\MonTomBaoNgu\bao_ngu_uc_ham_nam_dong_co.png" />
+    <Content Include="Image\AnhMonAn\MonTomBaoNgu\tom_cang_hoang_kim.jpg" />
+    <Content Include="Image\AnhMonAn\MonTomBaoNgu\tom_cang_long_hap_toi_ly_son.jpg" />
+    <Content Include="Image\AnhMonAn\MonTomBaoNgu\tom_cang_long_pho_mai_trung_muoi_salad.jpg" />
+    <Content Include="Image\AnhMonAn\MonTomBaoNgu\tom_cang_long_rang_toi_ot.jpg" />
+    <Content Include="Image\AnhMonAn\MonTomBaoNgu\tom_cang_long_xot_bi_do_banh_mi_bo_toi.jpg" />
+    <Content Include="Image\AnhMonAn\MonTomBaoNgu\tom_cang_long_xot_cam_salad_nui.jpg" />
+    <Content Include="Image\AnhMonAn\MonTomBaoNgu\tom_cang_long_xot_thai.jpg" />
+    <Content Include="Image\AnhMonAn\MonTomBaoNgu\tom_cang_long_xot_XO.jpg" />
+    <Content Include="Image\AnhMonAn\MonTomBaoNgu\tom_cang_nuong_pho_mai.jpg" />
+    <Content Include="Image\AnhMonAn\MonTomBaoNgu\tom_cang_rang_muoi.jpg" />
+    <Content Include="Image\AnhMonAn\MonTomBaoNgu\tom_cang_xot_singapore_banh_mi.jpg" />
+    <Content Include="Image\AnhMonAn\MonTomBaoNgu\tom_hum_dut_lo_pho_mai_nam.png" />
+    <Content Include="Image\AnhMonAn\MonTomBaoNgu\tom_hum_nuong_bo_toi.jpg" />
+    <Content Include="Image\AnhMonAn\MonTomBaoNgu\tom_hum_rang_muoi_hongkong.jpg" />
+    <Content Include="Image\AnhMonAn\MonTomBaoNgu\tom_hum_xot_tuong_XO.jpg" />
+    <Content Include="Image\AnhMonAn\MonTomBaoNgu\tom_rang_muoi_hongkong.jpg" />
+    <Content Include="Image\AnhMonAn\MonTomBaoNgu\tom_su_hoang_kim.jpg" />
+    <Content Include="Image\AnhMonAn\MonTomBaoNgu\tom_su_rang_kieu_MaLai.jpg" />
+    <Content Include="Image\AnhMonAn\MonTomBaoNgu\tom_su_rang_kieu_thai.jpg" />
+    <Content Include="Image\AnhMonAn\MonTomBaoNgu\tom_su_xoc_toi.jpg" />
+    <Content Include="Image\AnhMonAn\MonTomBaoNgu\tom_su_xot_bia_kieu_thai.jpg" />
+    <Content Include="Image\AnhMonAn\MonTomBaoNgu\tom_su_xot_chanh_day.jpg" />
+    <Content Include="Image\AnhMonAn\MonTomBaoNgu\tom_su_xot_mayonaise.jpg" />
+    <Content Include="Image\AnhMonAn\MonTrangMieng\banh_flan.jpg" />
+    <Content Include="Image\AnhMonAn\MonTrangMieng\che_hat_sen_dau_ngu.jpg" />
+    <Content Include="Image\AnhMonAn\MonTrangMieng\che_hat_sen_long_nhan.jpg" />
+    <Content Include="Image\AnhMonAn\MonTrangMieng\che_khuc_bach.jpg" />
+    <Content Include="Image\AnhMonAn\MonTrangMieng\coconut_mousse.jpg" />
+    <Content Include="Image\AnhMonAn\MonTrangMieng\mousse_cam_hat_chia.jpg" />
+    <Content Include="Image\AnhMonAn\MonTrangMieng\mousse_dau.jpg" />
+    <Content Include="Image\AnhMonAn\MonTrangMieng\mousse_lychees_yoghurt.jpg" />
+    <Content Include="Image\AnhMonAn\MonTrangMieng\mousse_tao.jpg" />
+    <Content Include="Image\AnhMonAn\MonTrangMieng\mousse_viet_quoc.jpg" />
+    <Content Include="Image\AnhMonAn\MonTrangMieng\nho_my.jpg" />
+    <Content Include="Image\AnhMonAn\MonTrangMieng\panna_cotta_chanh_day.jpg" />
+    <Content Include="Image\AnhMonAn\MonTrangMieng\passion _fruit_layer_cake.jpg" />
+    <Content Include="Image\AnhMonAn\MonTrangMieng\passion_cheese_cake.jpg" />
+    <Content Include="Image\AnhMonAn\MonTrangMieng\rau_cau_dua.jpg" />
+    <Content Include="Image\AnhMonAn\MonTrangMieng\rau_cau_kiwi_hat_chia.jpg" />
+    <Content Include="Image\AnhMonAn\MonTrangMieng\rau_cau_van_thuy_hoa_dau_biec.jpg" />
+    <Content Include="Image\AnhMonAn\MonTrangMieng\tau_hu_hanh_nhan.jpg" />
+    <Content Include="Image\AnhMonAn\MonTrangMieng\tiramisu.jpg" />
+    <Content Include="Image\AnhMonAn\NuocUong\goi1.jpg" />
+    <Content Include="Image\AnhMonAn\NuocUong\goi10.jpg" />
+    <Content Include="Image\AnhMonAn\NuocUong\goi2.jpg" />
+    <Content Include="Image\AnhMonAn\NuocUong\goi3.jpg" />
+    <Content Include="Image\AnhMonAn\NuocUong\goi4.jpg" />
+    <Content Include="Image\AnhMonAn\NuocUong\goi5.jpg" />
+    <Content Include="Image\AnhMonAn\NuocUong\goi6.jpg" />
+    <Content Include="Image\AnhMonAn\NuocUong\goi7.jpg" />
+    <Content Include="Image\AnhMonAn\NuocUong\goi8.jpg" />
+    <Content Include="Image\AnhMonAn\NuocUong\goi9.jpg" />
     <Content Include="Image\BanhManKhaiVi\BaguetteSeafoodCheese.jpg" />
     <Content Include="Image\BanhManKhaiVi\CroissantCheese.jpg" />
     <Content Include="Image\BanhManKhaiVi\DanishChicken&amp;Cheese.jpg" />
@@ -203,6 +572,14 @@
     <Content Include="Image\banner-1.jpg" />
     <Content Include="Image\banner-2.jpg" />
     <Content Include="Image\banner-3.jpg" />
+    <Content Include="Image\Banner_Layout2\cuoi1.jpg" />
+    <Content Include="Image\Banner_Layout2\cuoi2.jpg" />
+    <Content Include="Image\Banner_Layout2\cuoi3.jpg" />
+    <Content Include="Image\Banner_Layout2\cuoi4.jpg" />
+    <Content Include="Image\Banner_Layout2\cuoi5.jpg" />
+    <Content Include="Image\Banner_Layout2\cuoi6.jpg" />
+    <Content Include="Image\Banner_Layout2\cuoi7.jpg" />
+    <Content Include="Image\Banner_Layout2\cuoi8.jpg" />
     <Content Include="Image\ComMiBunMien\bun_xao_singapore.jpg" />
     <Content Include="Image\ComMiBunMien\com_chien_bao_ngu.jpg" />
     <Content Include="Image\ComMiBunMien\com_chien_ca_tuyet_XO.jpg" />
@@ -218,6 +595,7 @@
     <Content Include="Image\ComMiBunMien\mi_xao_tam_to.jpg" />
     <Content Include="Image\ComMiBunMien\mi_xao_thuong_hang.jpg" />
     <Content Include="Image\ComMiBunMien\mi_xao_xi_dau_than_heo_chien_gion.jpg" />
+    <Content Include="Image\GioHang.jpg" />
     <Content Include="Image\GioiThieu\daiTiec\daitiec.jpg" />
     <Content Include="Image\GioiThieu\daiTiec\daiTiec1.jpg" />
     <Content Include="Image\GioiThieu\daiTiec\daiTiec3.jpg" />
@@ -236,6 +614,48 @@
     <Content Include="Image\GioiThieu\quaLuuNiem\qua2.jpg" />
     <Content Include="Image\GioiThieu\quaLuuNiem\qua3.jpg" />
     <Content Include="Image\GioiThieu\quaLuuNiem\qua4.jpg" />
+    <Content Include="Image\GoiTrangTri\Goi_Better\1.png" />
+    <Content Include="Image\GoiTrangTri\Goi_Better\2.jpg" />
+    <Content Include="Image\GoiTrangTri\Goi_Better\3.jpg" />
+    <Content Include="Image\GoiTrangTri\Goi_Better\4.jpg" />
+    <Content Include="Image\GoiTrangTri\Goi_Better\5.jpg" />
+    <Content Include="Image\GoiTrangTri\Goi_Better\6.jpg" />
+    <Content Include="Image\GoiTrangTri\Goi_Better\7.jpg" />
+    <Content Include="Image\GoiTrangTri\Goi_Just\1.jpg" />
+    <Content Include="Image\GoiTrangTri\Goi_Just\2.jpg" />
+    <Content Include="Image\GoiTrangTri\Goi_Just\3.jpg" />
+    <Content Include="Image\GoiTrangTri\Goi_Just\4.jpg" />
+    <Content Include="Image\GoiTrangTri\Goi_Just\5.jpg" />
+    <Content Include="Image\GoiTrangTri\Goi_Just\6.jpg" />
+    <Content Include="Image\GoiTrangTri\Goi_Just\7.jpg" />
+    <Content Include="Image\GoiTrangTri\Goi_Ocean\1.jpg" />
+    <Content Include="Image\GoiTrangTri\Goi_Ocean\2.jpg" />
+    <Content Include="Image\GoiTrangTri\Goi_Ocean\3.jpg" />
+    <Content Include="Image\GoiTrangTri\Goi_Ocean\4.jpg" />
+    <Content Include="Image\GoiTrangTri\Goi_Ocean\5.jpg" />
+    <Content Include="Image\GoiTrangTri\Goi_Ocean\6.jpg" />
+    <Content Include="Image\GoiTrangTri\Goi_Ocean\7.jpg" />
+    <Content Include="Image\GoiTrangTri\Goi_The\1.jpg" />
+    <Content Include="Image\GoiTrangTri\Goi_The\2.jpg" />
+    <Content Include="Image\GoiTrangTri\Goi_The\3.jpg" />
+    <Content Include="Image\GoiTrangTri\Goi_The\4.jpg" />
+    <Content Include="Image\GoiTrangTri\Goi_The\5.jpg" />
+    <Content Include="Image\GoiTrangTri\Goi_The\6.jpg" />
+    <Content Include="Image\GoiTrangTri\Goi_The\7.jpg" />
+    <Content Include="Image\GoiTrangTri\Goi_The\8.jpg" />
+    <Content Include="Image\GoiTrangTri\Goi_Tiamo\1.jpg" />
+    <Content Include="Image\GoiTrangTri\Goi_Tiamo\2.jpg" />
+    <Content Include="Image\GoiTrangTri\Goi_Tiamo\3.jpg" />
+    <Content Include="Image\GoiTrangTri\Goi_Tiamo\4.jpg" />
+    <Content Include="Image\GoiTrangTri\Goi_Tiamo\5.jpg" />
+    <Content Include="Image\GoiTrangTri\Goi_Tiamo\6.jpg" />
+    <Content Include="Image\GoiTrangTri\Goi_When\1.jpg" />
+    <Content Include="Image\GoiTrangTri\Goi_When\2.jpg" />
+    <Content Include="Image\GoiTrangTri\Goi_When\3.jpg" />
+    <Content Include="Image\GoiTrangTri\Goi_When\4.jpg" />
+    <Content Include="Image\GoiTrangTri\Goi_When\5.jpg" />
+    <Content Include="Image\GoiTrangTri\Goi_When\6.jpg" />
+    <Content Include="Image\GoiTrangTri\Goi_When\7.jpg" />
     <Content Include="Image\KhaiViHaiMon\bacon_cuon_khoai_tay_my.jpg" />
     <Content Include="Image\KhaiViHaiMon\banh_bap_hai_san.jpg" />
     <Content Include="Image\KhaiViHaiMon\bo_my_cuon_vem_newzealand.jpg" />
@@ -286,6 +706,9 @@
     <Content Include="Image\Lau\lau_trai_cay_thuong_hang.jpg" />
     <Content Include="Image\Lau\lau_tu_buu_bong_atiso_do.jpg" />
     <Content Include="Image\Lau\lau_vuong_quoc_nam.jpg" />
+    <Content Include="Image\layout_2.jpg" />
+    <Content Include="Image\layout_3-fotor.jpg" />
+    <Content Include="Image\layout_3.jpg" />
     <Content Include="Image\logo.jpg" />
     <Content Include="Image\logo_GP-removebg-preview.png" />
     <Content Include="Image\MonAnKem\cai_non_hongkong_xot_dau_hao.jpg" />
@@ -430,6 +853,7 @@
     <Content Include="Image\MonTrangMieng\rau_cau_van_thuy_hoa_dau_biec.jpg" />
     <Content Include="Image\MonTrangMieng\tau_hu_hanh_nhan.jpg" />
     <Content Include="Image\MonTrangMieng\tiramisu.jpg" />
+    <Content Include="Image\NenGrand.jpg" />
     <Content Include="Image\NuocUong\aquafina%281.5l%29.jpg" />
     <Content Include="Image\NuocUong\budweiser_chai.jpg" />
     <Content Include="Image\NuocUong\budweiser_lon.jpg" />
@@ -442,18 +866,25 @@
     <Content Include="Image\NuocUong\tiger_chai%28330ml%29.jpg" />
     <Content Include="Image\NuocUong\tiger_lon.jpg" />
     <Content Include="Image\NuocUong\tiger_lon_crystal%28Bạc%29.jpg" />
-    <Content Include="Image\paimon.png" />
     <Content Include="Image\s1.jpg" />
     <Content Include="Image\s2.jpg" />
     <Content Include="Image\s3.jpg" />
     <Content Include="Image\s4.jpg" />
     <Content Include="Image\s5.jpg" />
     <Content Include="Image\s6.jpg" />
+    <Content Include="Image\SanhTiec\sanh1.jpg" />
+    <Content Include="Image\SanhTiec\sanh2.jpg" />
+    <Content Include="Image\SanhTiec\sanh3.jpg" />
+    <Content Include="Image\SanhTiec\sanh4.jpg" />
+    <Content Include="Image\SanhTiec\sanh5.jpg" />
+    <Content Include="Image\SanhTiec\sanh6.jpg" />
     <Content Include="Image\TrangTri\JUST_A_MOMENT\J_1.jpg" />
     <Content Include="Image\TrangTri\OCEAN_OF_LOVE\O_1.jpg" />
     <Content Include="Image\TrangTri\THE_ENCHANTED_FOREST\The_1.jpg" />
     <Content Include="Image\TrangTri\TIAMO\T_1.jpg" />
     <Content Include="Image\TrangTri\WHEN_LOVE_BLOSSOMS\W_1.jpg" />
+    <Content Include="Scripts\AddMonAnNuocUong.js" />
+    <Content Include="Scripts\addToCart.js" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -466,6 +897,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Scripts\dialogflow_api.js" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
@@ -495,20 +927,55 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\DangNhap.cshtml" />
     <Content Include="Views\Home\DatTiec.cshtml" />
     <Content Include="Views\Home\Gioithieu.cshtml" />
     <Content Include="Views\Home\Menu.cshtml" />
     <Content Include="Views\Home\SanhTiec.cshtml" />
     <Content Include="Views\Home\Trangtri.cshtml" />
-    <Content Include="Views\KhachHang\DangNhap.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\DatTiec\DatTiec.cshtml" />
+    <Content Include="Views\KhachHang\ThongTinKhachHang.cshtml" />
+    <Content Include="Views\List_Loai_MonAn_Nuoc\GetAllMonAnById.cshtml" />
+    <Content Include="Views\List_Loai_MonAn_Nuoc\GetAllNuocById.cshtml" />
+    <Content Include="Views\List_Loai_MonAn_Nuoc\List_Loai_MonAn_Nuoc.cshtml" />
+    <Content Include="Views\Shared\Layout_DatTiec.cshtml" />
+    <Content Include="Views\List_Loai_MonAn_Nuoc\GioHang.cshtml" />
+    <Content Include="Views\GioHang\GioHang.cshtml" />
+    <Content Include="Views\DatMonAn\GetDatMon.cshtml" />
+    <Content Include="Views\DatMonAn\GetDatNuoc.cshtml" />
+    <Content Include="Views\DatMonAn\List_Loai_MonAn_Nuoc.cshtml" />
+    <Content Include="Views\MonAn_Menu\GetMonAn_Menu.cshtml" />
+    <Content Include="Views\LoaiDichVu\DV_Khac.cshtml" />
+    <Content Include="Views\LoaiDichVu\GetAll.cshtml" />
+    <Content Include="Views\Home\UuDai.cshtml" />
+    <Content Include="Views\LichSanh\GetLichSanh.cshtml" />
+    <Content Include="Views\GioHang\HopDong.cshtml" />
+    <Content Include="Views\Shared\Layout_QuanLy.cshtml" />
+    <Content Include="Views\QuanLy\QuanLyDichVu.cshtml" />
+    <Content Include="Views\QuanLy\QuanLyTiec.cshtml" />
+    <Content Include="Views\QuanLy\QuanLyKhachHang.cshtml" />
+    <Content Include="Views\LichSanh\GetAllSanh.cshtml" />
+    <Content Include="Views\DatTiec\ThongTinDatTiec.cshtml" />
+    <Content Include="Views\NhanVien\DangNhap.cshtml" />
+    <Content Include="Views\NhanVien\LoginPartial.cshtml" />
+    <Content Include="Views\QuanLy\QuanLyNhanVien.cshtml" />
+    <Content Include="Views\QuanLy\QuanLyMonAn.cshtml" />
+    <Content Include="Views\QuanLy\QuanLyNuocUong.cshtml" />
+    <Content Include="Views\QuanLy\QuanLySanh.cshtml" />
+    <Content Include="Views\QuanLy\Home.cshtml" />
+    <Content Include="Views\QuanLy\ThemSanh.cshtml" />
+    <Content Include="Views\QuanLy\SuaSanh.cshtml" />
+    <Content Include="Views\QuanLy\ThemNhanVien.cshtml" />
+    <Content Include="Views\QuanLy\SuaNhanVien.cshtml" />
+    <Content Include="Views\QuanLy\ThemMonAn.cshtml" />
+    <Content Include="Views\QuanLy\SuaMonAn.cshtml" />
+    <Content Include="Views\QuanLy\ThemNuoc.cshtml" />
+    <Content Include="Views\QuanLy\SuaNuoc.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\MonAnTrongMenu\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />

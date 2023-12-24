@@ -1,0 +1,74 @@
+﻿@model DatTiecNhaHangTiecCuoi.Models.List_LoaiDichVu_DichVu
+@{
+    ViewBag.Title = "DV_Khac";
+    Layout = "~/Views/Shared/Layout_DatTiec.cshtml";
+}
+<style>
+    .div_khung {
+        /*background-color: white;*/
+        width: 100%;
+    }
+
+    button {
+        background-color: #198975;
+        display: flex;
+        justify-items: right;
+    }
+
+    td {
+        width: 100%;
+        border-bottom: 1px solid;
+        padding: 10px 50px;
+        background-color: white;
+        /*background-color: transparent;*/
+        opacity: 0.7;
+        font-weight: bold;
+    }
+
+    .b_text {
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        color: white;
+        background-color: #c77408;
+    }
+    .dongia {
+        text-align: right;
+    }
+</style>
+
+<div class="div_khung">
+    <div>
+        <b class="b_text">DỊCH VỤ</b>
+    </div>
+    <table class="table">
+        @foreach (var item in Model.list_dvtinhphi)
+        {
+            <tr>
+                <td>-@item.TenDichVu </td>
+                <td class="formatted-number dongia">@item.DonGiaDichVu (VNĐ)</td>
+
+                <td><button>CHỌN</button> </td>
+            </tr>
+
+        }
+    </table>   
+
+</div>
+
+<script>
+    const numberElements = document.getElementsByClassName('formatted-number');
+
+    Array.from(numberElements).forEach((element) => {
+        const number = element.textContent;
+        const formattedNumber = addThousandsSeparator(number);
+        element.textContent = formattedNumber;
+    });
+
+    function addThousandsSeparator(number) {
+        const parts = number.toString().split('.');
+        parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+        return parts.join('.');
+    }
+</script>

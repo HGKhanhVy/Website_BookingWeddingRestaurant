@@ -1,0 +1,170 @@
+﻿@using DatTiecNhaHangTiecCuoi.Models
+@model List<SanhEntity>
+
+@{
+    ViewBag.Title = "GetLichSanh";
+    Layout = "~/Views/Shared/Layout_DatTiec.cshtml";
+}
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+</head>
+
+<style>
+    .div_all {
+        background-color: transparent;
+        opacity: 0.9;
+        /*background-color: white;*/
+        width: 100%;
+    }
+
+    .div_ngay {
+        padding: 20px 20px;
+    }
+
+    .div_ca {
+        background-color: #0094ff;
+        text-align: center;
+        width: 9%;
+    }
+
+    
+
+    .td_ {
+        text-align: center;
+    }
+
+    .div_button {
+        background-color: white;
+        margin: 30px 20px;
+        height: 100px;
+        border: 1px solid;
+        color: white;
+        border-radius: 10px 10px;
+    }
+
+    .custom-button {
+        width: 100%;
+        height: 100px;
+        border-radius: 10px 10px;
+        font-weight: bold;
+
+        background-color: #e8940f;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+    }
+
+        .custom-button:hover {
+            background-color: hotpink;
+        }
+</style>
+
+<div class="div_all">
+    @*<div class="div_ngay">
+            <input type="date" id="ngayToChuc" placeholder="Ngày tổ chức">
+            <br>
+            <input type="radio" id="caTrua" name="caToChuc" value="Ca trưa">
+            <label for="caTrua">11:30</label>
+            <br>
+            <input type="radio" id="caToi" name="caToChuc" value="Ca tối">
+            <label for="caToi">17:00</label>
+            <br>
+            <button onclick="kiemTra()">Kiểm tra</button>
+
+        </div>*@
+
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-2 div_button">
+                <button id="themSanh" onclick="chonSanh('@item.MaSanh')" class="custom-button" onmouseover="this.style.backgroundColor='hotpink'" onmouseout="this.style.backgroundColor='#e8940f'">@item.TenSanh</button>
+            </div>
+        }
+    </div>
+
+</div>
+@*<script>
+            function kiemTra() {
+                var ngayToChuc = document.getElementById("ngayToChuc").value;
+                var caToChuc;
+
+                var caTrua = document.getElementById("caTrua");
+                var caToi = document.getElementById("caToi");
+
+                if (caTrua.checked) {
+                    caToChuc = caTrua.value;
+                } else if (caToi.checked) {
+                    caToChuc = caToi.value;
+                } else {
+                    alert("Vui lòng chọn ca tổ chức.");
+                    return;
+                }
+
+                alert("Ngày tổ chức: " + ngayToChuc + "\nCa tổ chức: " + caToChuc);
+            }
+    s</script>*@
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+    function LuuThongTinLichSanh(maSanh) {
+        // Gửi mã sảnh đến action controller
+        $.ajax({
+            type: "POST",
+            url: "/LichSanh/LuuThongTinLichSanh",
+            data: { maSanh: maSanh },
+            success: function (result) {
+                // Xử lý kết quả từ action controller (nếu cần)
+                console.log(result);
+            },
+            error: function (error) {
+                console.error(error);
+            }
+        });
+    }
+</script>
+<script>
+    var selectedItems = "";
+    var daAnButtonLuuThongTin = false;
+
+    // Hàm thêm món ăn vào danh sách khi bấm vào button
+    function chonSanh(MaSanh) {
+        console.log('Button clicked. Adding to cart...');
+        selectedItems = MaSanh;
+
+        var button = document.getElementById('themSanh');
+        button.disabled = true;
+    }
+
+    document.getElementById('themSanh').addEventListener('click', sendToGioHangController);
+    function sendToGioHangController() {
+        console.log(selectedItems);
+
+        $.ajax({
+            type: 'POST',
+            url: '/GioHang/LuuThongTinSanh',
+            contentType: 'application/json; charset=utf-8',
+            data: JSON.stringify({ selectedItems: selectedItems }),
+            success: function (response) {
+                console.log('Dữ liệu đã được gửi và lưu vào Session thành công:', response);
+            },
+            error: function (error) {
+                console.error('Lỗi khi gửi và lưu dữ liệu vào Session:', error);
+            }
+        });
+        daAnButtonLuuThongTin = true;
+    }
+    document.getElementById('LuuThongTin').onclick = function () {
+        alert("Thông tin sảnh đã được lưu.");
+    };
+
+    window.onbeforeunload = function () {
+        if (!daAnButtonLuuThongTin) {
+            var result = confirm("Bạn chưa chọn sảnh. Bạn có chắc muốn rời khỏi trang?");
+            return result ? undefined : "Bạn đã từ chối rời khỏi trang.";
+        }
+    };
+</script>

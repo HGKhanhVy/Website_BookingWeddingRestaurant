@@ -1,0 +1,139 @@
+﻿@using DatTiecNhaHangTiecCuoi.Models
+@model List<KhachHangEntity>
+@{
+    ViewBag.Title = "QuanLyKhachHang";
+    Layout = "~/Views/Shared/Layout_QuanLy.cshtml";
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            border: none;
+        }
+
+        th, td {
+            border-bottom: 2px solid;
+            padding: 2px;
+            text-align: center;
+        }
+
+            th:not(:last-child),
+            td:not(:last-child) {
+                border-right: 1px solid;
+            }
+
+            th:first-child,
+            td:first-child,
+            th:nth-child(2),
+            td:nth-child(2) {
+                text-align: left; /* Canh trái cho cột 1 và cột 2 */
+            }
+
+            td:nth-child(3),
+            td:nth-child(4),
+            td:nth-child(5) {
+                width: 15%; /* Đặt tỷ lệ phần trăm cho từng ô td tại đây */
+            }
+
+            td:nth-child(6) {
+                width: 5%;
+            }
+
+            td:nth-child(7) {
+                width: 5%;
+            }
+
+        th, td {
+            text-align: center; /* Canh giữa cho title */
+            border-top: 1px solid;
+        }
+
+        button {
+            width: 50px; /* Đặt chiều rộng của nút là 100% */
+            height: 30px;
+            background-color: bisque;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div style="display: flex; justify-content: space-between; margin-bottom: 15px;">
+        <h1 style="margin: 0;">Danh sách Khách Hàng</h1>
+        <button style="width: 10%" onclick="Add()">Thêm</button>
+    </div>
+    <hr />
+    <table>
+        <thead>
+            <tr>
+                <th>Tên Khách Hàng</th>
+                <th>Số Điện Thoại</th>
+                <th>Ngày Sinh</th>
+                <th>Căn Cước Công Dân</th>
+                <th>Gmail</th>
+                <th>Thao Tác</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var kh in Model)
+            {
+                <tr>
+                    <td>@kh.TenKhachHang</td>
+                    <td>@kh.SoDienThoai</td>
+                    <td>@kh.NgaySinh</td>
+                    <td>@kh.CCCD</td>
+                    <td>@kh.Gmail</td>
+                    <td>
+                        <table>
+                            <tr>
+                                <td style="border: none;">
+                                    <button onclick="Edit('@kh.MaKhachHang')">Sửa</button>
+                                </td>
+                                <td style="border: none;">
+                                    <button onclick="Delete('@kh.MaKhachHang')">Xóa</button>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        function Edit(maKhachHang) {
+            // Viết mã xử lý khi nút Sửa được nhấn
+            // Ví dụ: Chuyển hướng đến trang chỉnh sửa với mã Dịch Vụ
+            window.location.href = '/DichVu/Edit?maKhachHang=' + maKhachHang;
+        }
+
+        function Delete(maKhachHang) {
+            var confirmDelete = confirm('Bạn có chắc muốn xóa khách hàng này không?');
+            if (confirmDelete) {
+                // Sử dụng Ajax để gửi yêu cầu xóa
+                $.ajax({
+                    url: '/QuanLy/XoaKhachHang',
+                    type: 'POST',
+                    data: { maKhachHang: maKhachHang },
+                    success: function (result) {
+                        console.log(result);
+                    },
+                    error: function (error) {
+                        console.log(error);
+                    }
+                });
+                location.reload();
+            }
+        }
+    </script>
+</body>
+</html>
+
+
+

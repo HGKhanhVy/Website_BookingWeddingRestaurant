@@ -1,0 +1,149 @@
+﻿@model DatTiecNhaHangTiecCuoi.Models.List_Loai_MonAn_Nuoc
+@{
+    ViewBag.Title = "GetAllNuocById";
+    Layout = "~/Views/Shared/Layout_DatTiec.cshtml";
+}
+<style>
+    .div_ {
+        padding: 0px 10px;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        color: #000000;
+    }
+
+    .image {
+        width: 100%;
+        height: 200px;
+        margin-bottom: 10px;
+        box-shadow: 0px 0px 5px 5px #999999;
+    }
+
+    span {
+        font-weight: bold;
+        color: red;
+    }
+
+    b {
+        margin-bottom: 10px;
+    }
+
+    .div_col {
+        padding: 10px 0px;
+        background-color: white;
+        margin: 10px 10px;
+        height: 350px;
+    }
+
+    button {
+        width: 100%;
+        height: 34px;
+        background-color: #0a7f69;
+    }
+
+    .div_btn {
+        margin-top: 15px;
+        width: 100%;
+    }
+
+    .div_ten_gia {
+        height: 70px;
+        padding-bottom: 0px;
+    }
+</style>
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>GetAllMonAnById</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="div_ row">
+        @foreach (var item in Model.list_nuoc)
+        {
+            <div class="col-7 div_col">
+                <img src="~/Image/AnhMonAn/@item.HinhAnh" class="image" />
+                <div class="div_ten_gia">
+                    <b>@item.TenNuoc</b><br />
+                    <span class="formatted-number">@item.DonGia VNĐ /@item.DVT</span>
+                </div>
+                <div class="div_btn">
+                    <button id="addCartNuoc" onclick="addToCartNuoc('@item.TenNuoc', '@item.HinhAnh', '@item.DonGia')">
+                        <i class="fa fa-shopping-cart" style="font-size:24px; color: white"></i>
+                    </button>
+                </div>
+
+            </div>
+
+        }
+        <button onclick="sendToGioHangController('Nuoc')"">Lưu thông tin nước uống</button>
+    </div>
+</body>
+</html>
+
+<script>
+    const numberElements = document.getElementsByClassName('formatted-number');
+
+    Array.from(numberElements).forEach((element) => {
+        const number = element.textContent;
+        const formattedNumber = addThousandsSeparator(number);
+        element.textContent = formattedNumber;
+    });
+
+    function addThousandsSeparator(number) {
+        const parts = number.toString().split('.');
+        parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+        return parts.join('.');
+    }
+</script>
+
+<script>
+    const numberElementsNuoc = document.querySelectorAll('.formatted-number');
+
+    numberElementsNuoc.forEach((element) => {
+        const number = element.textContent;
+        const formattedNumber = addThousandsSeparator(number);
+        element.textContent = formattedNumber;
+    });
+
+</script>
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+    var selectedItemsNuoc = [];
+    function addToCartNuoc(TenNuoc, HinhAnh, DonGia) {
+        console.log('Button clicked. Adding to cart...');
+        var button = document.getElementById('addCartNuoc');
+        button.disabled = true;
+
+        var newItem = {
+            TenNuoc: TenNuoc,
+            HinhAnh: HinhAnh,
+            DonGia: DonGia,
+        };
+        selectedItemsNuoc.push(newItem);
+
+    }
+
+    function sendToGioHangController() {
+        console.log(selectedItemsNuoc);
+
+        $.ajax({
+            type: 'POST',
+            url: '/GioHang/LayThongTinNuocUong',
+            contentType: 'application/json; charset=utf-8',
+            data: JSON.stringify({ selectedItemsNuoc: selectedItemsNuoc }),
+            success: function (response) {
+                console.log('Dữ liệu đã được gửi thành công:', response);
+                /*window.location.href = '/GioHang/LayThongTinNuocUong';*/
+            },
+            error: function (error) {
+                console.error('Lỗi khi gửi dữ liệu:', error);
+            }
+        });
+    }
+</script>
+

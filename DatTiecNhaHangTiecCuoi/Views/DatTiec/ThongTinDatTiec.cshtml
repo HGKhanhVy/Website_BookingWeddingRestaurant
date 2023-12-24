@@ -1,0 +1,1123 @@
+﻿@model DatTiecNhaHangTiecCuoi.Models.ListThongTinDatTiec
+@{
+    ViewBag.Title = "Đặt Tiệc";
+    //Layout = "~/Views/Shared/Layout_DatTiec.cshtml";
+}
+
+<!DOCTYPE html>
+<!-- Coding By CodingNepal | codingnepalweb.com -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <title>Đặt Tiệc</title>
+    <style>
+        :root {
+            /* ===== Colors ===== */
+            --primary-color: #0E4BF1;
+            --panel-color: #FFF;
+            --text-color: #000;
+            --black-light-color: #707070;
+            --border-color: #e6e5e5;
+            --toggle-color: #DDD;
+            --box1-color: #4DA3FF;
+            --box2-color: #FFE6AC;
+            --box3-color: #E7D1FC;
+            --title-icon-color: #fff;
+            /* ====== Transition ====== */
+            --tran-05: all 0.5s ease;
+            --tran-03: all 0.3s ease;
+            --tran-03: all 0.2s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            background: #f6f7fb;
+        }
+
+        .steps .circle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 50px;
+            width: 50px;
+            color: #999;
+            font-size: 22px;
+            font-weight: 500;
+            border-radius: 50%;
+            background: #fff;
+            border: 4px solid #e0e0e0;
+            transition: all 200ms ease;
+            transition-delay: 0s;
+        }
+
+            .steps .circle.active {
+                transition-delay: 100ms;
+                border-color: #4070f4;
+                color: #4070f4;
+            }
+
+        .steps .progress-bar {
+            position: absolute;
+            height: 4px;
+            width: 100%;
+            background: #e0e0e0;
+            z-index: -1;
+        }
+
+        .progress-bar .indicator {
+            position: absolute;
+            height: 100%;
+            width: 0%;
+            background: #4070f4;
+            transition: all 300ms ease;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 10px;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+        }
+
+        .mycontainer {
+            display: flex;
+            width: 100%;
+            height: 580px;
+            overflow: auto;
+        }
+
+        .buttons button {
+            width: 100px;
+            height: 30px;
+            background: #4070f4;
+            border: none;
+            border-radius: 8px;
+            color: #fff;
+            font-size: 16px;
+            font-weight: 400;
+            cursor: pointer;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+            transition: all 200ms linear;
+        }
+
+            .buttons button:active {
+                transform: scale(0.97);
+            }
+
+            .buttons button:disabled {
+                background: #87a5f8;
+                cursor: not-allowed;
+            }
+
+        .top {
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: flex;
+            width: 100%;
+            height: 70px;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 14px;
+            background-color: var(--panel-color);
+            border-bottom: 5px solid var(--border-color);
+            border-radius: 10px;
+        }
+
+        .steps {
+            display: flex;
+            width: 80%;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            margin-left: 150px;
+            margin-right: 150px;
+        }
+
+        .mycontainer .content {
+            display: none;
+            width: 100%;
+        }
+
+            .mycontainer .content.active {
+                display: block;
+            }
+
+            .mycontainer .content:not(.active) {
+                display: none;
+            }
+
+
+        /* ===============================================================*/
+        /*Chọn Món Ăn*/
+        .div_khung {
+            /*background-color: white;*/
+            width: 100%;
+            padding: 0 20px;
+        }
+
+        .buttonMon {
+            background-color: darkred;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            width: 100%;
+            height: 30px;
+            border-radius: 10px;
+            color: white;
+            font-weight: bold;
+        }
+
+        .div_td {
+            width: 100%;
+            /*border-bottom: 1px solid;*/
+            margin: 5px 5px;
+            padding: 10px 10px;
+            background-color: white;
+            /*opacity: 0.9;
+        font-weight: bold;*/
+        }
+
+        .b_text {
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            background-color: #c77408;
+        }
+
+        .hinh {
+            width: 100%;
+            height: 200px;
+        }
+
+        .gia {
+            color: white;
+            width: 100%;
+            font-weight: bold;
+            display: flex;
+            justify-content: left;
+            text-align: left;
+            padding-left: 10px;
+        }
+
+        .b_ten {
+            background-color: lightgoldenrodyellow;
+            color: brown;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            height: 50px;
+            /*padding: 10px;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        color: white;
+        background-color: #bead07;*/
+        }
+
+        .div_row {
+            margin-top: 30px;
+        }
+
+        .div_dongia {
+            background-color: #7d0304f2;
+            border-top-right-radius: 30px;
+            top: 0px;
+            width: 150px;
+            position: absolute;
+        }
+
+        .div_dongiaNuoc {
+            background-color: #7d0304f2;
+            border-top-right-radius: 30px;
+            top: 0px;
+            width: 200px;
+            position: absolute;
+        }
+
+        .image-container {
+            position: relative;
+        }
+
+        /*=============================================================================*/
+        /*SẢNH*/
+        .div_all {
+            background-color: transparent;
+            opacity: 0.9;
+            /*background-color: white;*/
+            width: 100%;
+        }
+
+        .div_ngay {
+            padding: 20px 20px;
+        }
+
+        .div_ca {
+            background-color: #0094ff;
+            text-align: center;
+            width: 9%;
+        }
+
+
+
+        .td_ {
+            text-align: center;
+        }
+
+        .div_button {
+            background-color: white;
+            margin: 30px 20px;
+            height: 100px;
+            border: 1px solid;
+            color: white;
+            border-radius: 10px 10px;
+        }
+
+        .custom-button {
+            width: 100%;
+            height: 100px;
+            border-radius: 10px 10px;
+            font-weight: bold;
+            background-color: #e8940f;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+            .custom-button:hover {
+                background-color: hotpink;
+            }
+
+        /*============================================================*/
+        /* DỊCH VỤ */
+        .image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            width: 350px;
+            height: 300px;
+            color: darkred;
+            font-weight: bold;
+        }
+
+            .image b {
+                background-color: #f2ad47;
+                width: 100%;
+                height: auto;
+                font-size: 17px;
+                border-radius: 10px;
+                margin-top: 274px;
+            }
+
+        #overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Màu nền mờ, thay đổi giá trị alpha (0.5) để điều chỉnh độ mờ */
+            z-index: 1;
+            display: none;
+        }
+
+        #myDiv4, #myDiv5, #myDiv6, #myDiv7, #myDiv8, #myDiv9 {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 40px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            z-index: 2;
+            display: none;
+        }
+
+        #closeBtn4, #closeBtn5, #closeBtn6, #closeBtn7, #closeBtn8, #closeBtn9 {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: transparent;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .giatien {
+            text-align: right;
+        }
+
+        .equal-columns {
+            table-layout: auto;
+            width: 100%;
+        }
+
+            .equal-columns th,
+            .equal-columns td {
+                text-align: center; /* Căn giữa nội dung trong các ô */
+            }
+
+            .equal-columns th {
+                background-color: #bd550a; /* Màu nền cho tiêu đề cột (th) */
+            }
+
+            .equal-columns td {
+                border: 1px solid lightgray; /* Viền cho các ô dữ liệu (td) */
+            }
+
+            .equal-columns th,
+            .equal-columns td {
+                width: 10%; /* Đặt độ rộng ban đầu của các ô là 1% */
+            }
+
+                .equal-columns th:first-child,
+                .equal-columns td:first-child {
+                    width: 30%; /* Đặt độ rộng của ô đầu tiên là auto để căn giữa và giãn đều */
+                }
+    </style>
+</head>
+<body>
+    <header class="top">
+        <div class="steps">
+            <span class="circle active">01</span>
+            <span class="circle">02</span>
+            <span class="circle">03</span>
+            <span class="circle">04</span>
+            <div class="progress-bar">
+                <span class="indicator"></span>
+            </div>
+        </div>
+    </header>
+    <div class="mycontainer">
+        <div class="content active" id="step1">
+            <div class="div_all">
+                <div class="row">
+                    @foreach (var item in Model.list_sanh)
+                    {
+                        <div class="col-2 div_button">
+                            <button id="themSanh" onclick="chonSanh('@item.MaSanh')" class="custom-button" onmouseover="this.style.backgroundColor='hotpink'" onmouseout="this.style.backgroundColor='#e8940f'">@item.TenSanh</button>
+                        </div>
+                    }
+                </div>
+
+            </div>
+        </div>
+        <div class="content" id="step2">
+            <div class="div_khung">
+                @foreach (var loai in Model.list_loaimonan)
+                {
+                    <div>
+                        <b class="b_text">@loai.TenLoaiMon</b>
+                    </div>
+                    <div class="row div_row">
+                        @foreach (var item in Model.list_monan)
+                        {
+                            if (item.MaLoaiMonAn == loai.MaLoaiMonAn)
+                            {
+                                <div class="col-lg-3">
+                                    <div class="div_td">
+                                        <div class="image-container">
+                                            <img src="~/Image/AnhMonAn/@item.HinhAnh" class="hinh" />
+                                            <div class="div_dongia"><span class="formatted-number gia">@item.DonGia VNĐ</span></div>
+                                        </div>
+                                        <div class="b_ten">
+                                            <b>@item.TenMonAn</b>
+
+                                        </div>
+                                        <button class="buttonMon" id="themMonAn" onclick="chonMonAn('@item.MaMonAn','@item.TenMonAn', '@item.HinhAnh', '@item.DonGia')">CHỌN</button>
+                                    </div>
+                                </div>
+                            }
+                        }
+                    </div>
+                }
+            </div>
+        </div>
+        <div class="content" id="step3">
+            <div class="div_khung">
+                <div>
+                    <b class="b_text">CÁC GÓI NƯỚC UỐNG</b>
+                </div>
+                <div class="row div_row">
+                    @foreach (var item in Model.list_nuoc)
+                    {
+                        <div class="col-lg-3">
+                            <div class="div_td">
+                                <div class="image-container">
+                                    <img src="~/Image/AnhMonAn/@item.HinhAnh" class="hinh" />
+                                    <div class="div_dongiaNuoc"><span class="formatted-number gia">@item.DonGia (VNĐ)/bàn</span></div>
+                                </div>
+                                <div class="b_ten">
+                                    <b>@item.TenNuoc</b>
+
+                                </div>
+                                <button class="buttonMon" id="themNuoc" onclick="chonNuoc('@item.MaNuoc','@item.TenNuoc', '@item.HinhAnh', '@item.DonGia')">CHỌN</button>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="content" id="step4">
+            <div class="div_khung">
+                @foreach (var loaidv in Model.list_loaidv)
+                {
+                    if (loaidv.MaLoaiDichVu == "L_DV0004")
+                    {
+                        <button class="btnno" id="showDivBtn4">
+                            <div class="image" alt="Show Div" style="background-image: url('../../image/anhgoitrangtri/oceanoflove.jpg'); background-size: cover;">
+                                <b>@loaidv.TenLoaiDichVu</b>
+                            </div>
+                        </button>
+
+                    }
+                    if (loaidv.MaLoaiDichVu == "L_DV0005")
+                    {
+                        <button class="btnno" id="showDivBtn5">
+                            <div class="image" alt="Show Div" style="background-image: url('../../image/anhgoitrangtri/justamoment.jpg'); background-size: cover;">
+                                <b>@loaidv.TenLoaiDichVu</b>
+                            </div>
+                        </button>
+
+                    }
+                    if (loaidv.MaLoaiDichVu == "L_DV0006")
+                    {
+                        <button class="btnno" id="showDivBtn6">
+                            <div class="image" alt="Show Div" style="background-image: url('../../image/anhgoitrangtri/better.png'); background-size: cover;">
+                                <b>@loaidv.TenLoaiDichVu</b>
+                            </div>
+                        </button>
+
+                    }
+                    if (loaidv.MaLoaiDichVu == "L_DV0007")
+                    {
+                        <button class="btnno" id="showDivBtn7">
+                            <div class="image" alt="Show Div" style="background-image: url('../../image/anhgoitrangtri/tiamo.jpg'); background-size: cover;">
+                                <b>@loaidv.TenLoaiDichVu</b>
+                            </div>
+                        </button>
+
+                    }
+                    if (loaidv.MaLoaiDichVu == "L_DV0008")
+                    {
+                        <button class="btnno" id="showDivBtn8">
+                            <div class="image" alt="Show Div" style="background-image: url('../../image/anhgoitrangtri/forget.jpg'); background-size: cover;">
+                                <b>@loaidv.TenLoaiDichVu</b>
+                            </div>
+                        </button>
+
+                    }
+                    if (loaidv.MaLoaiDichVu == "L_DV0009")
+                    {
+                        <button class="btnno" id="showDivBtn9">
+                            <div class="image" alt="Show Div" style="background-image: url('../../image/anhgoitrangtri/whenlove.jpg'); background-size: cover">
+                                <b>@loaidv.TenLoaiDichVu</b>
+                            </div>
+                        </button>
+
+                    }
+
+                }
+
+                <div id="overlay"></div>
+
+                @*//////////////////////////////////////////////*@
+                <div id="myDiv4">
+                    <button id="closeBtn4">X</button>
+
+                    <table class="equal-columns">
+                        <tr>
+                            <th>Mức bàn</th>
+                            <th>Gía trọn gói</th>
+                            <th>Giảm 30%</th>
+                            <th></th>
+                        </tr>
+                        @foreach (var dv in Model.list_dichvu)
+                        {
+                            foreach (var tinhphi in Model.list_dvtinhphi)
+                            {
+                                if (dv.MaLoaiDichVu == "L_DV0004" && tinhphi.MaDichVu == dv.MaDichVu && tinhphi.GiaLe == 0)
+                                {
+                                    <tr>
+                                        <td>@tinhphi.DieuKienBanToiThieu - @tinhphi.DieuKienBanToiDa</td>
+                                        <td class="formatted-number giatien">@tinhphi.GiaTronGoi</td>
+                                        <td class="formatted-number giatien">@tinhphi.GiaGiam30</td>
+                                        <td><button id="themDichVu" onclick="chonDichVu('@tinhphi.MaDichVuTinhPhi', '@tinhphi.TenDichVu', '@tinhphi.HinhAnh', '@tinhphi.GiaGiam30', '@tinhphi.GiaLe')">CHỌN</button></td>
+
+                                    </tr>
+
+                                }
+                            }
+                        }
+
+                        <tr>
+                            <th>Hạng mục</th>
+                            <th>Hình ảnh</th>
+                            <th>Gía lẻ</th>
+                            <th></th>
+                        </tr>
+                        @foreach (var dv in Model.list_dichvu)
+                        {
+                            foreach (var tinhphi in Model.list_dvtinhphi)
+                            {
+                                if (dv.MaLoaiDichVu == "L_DV0004" && tinhphi.MaDichVu == dv.MaDichVu && tinhphi.GiaLe != 0)
+                                {
+                                    <tr>
+                                        <td>@tinhphi.MoTa</td>
+                                        <td><img src="~/Image/@tinhphi.HinhAnh" style="width: 70px; height: 50px;" /></td>
+                                        <td class="formatted-number giatien">@tinhphi.GiaLe</td>
+                                        <td><button id="themDichVu" onclick="chonDichVu('@tinhphi.MaDichVuTinhPhi', '@tinhphi.TenDichVu', '@tinhphi.HinhAnh', '@tinhphi.GiaGiam30', '@tinhphi.GiaLe')">CHỌN</button></td>
+                                    </tr>
+
+                                }
+                            }
+                        }
+
+                    </table>
+                </div>
+
+
+                @*//////////////////////////////////////////////*@
+                <div id="myDiv5">
+                    <button id="closeBtn5">X</button>
+                    <table class="equal-columns">
+                        <tr>
+                            <th>Mức bàn</th>
+                            <th>Gía trọn gói</th>
+                            <th>Giảm 30%</th>
+                            <th></th>
+                        </tr>
+                        @foreach (var dv in Model.list_dichvu)
+                        {
+                            foreach (var tinhphi in Model.list_dvtinhphi)
+                            {
+                                if (dv.MaLoaiDichVu == "L_DV0005" && tinhphi.MaDichVu == dv.MaDichVu && tinhphi.GiaLe == 0)
+                                {
+                                    <tr>
+                                        <td>@tinhphi.DieuKienBanToiThieu - @tinhphi.DieuKienBanToiDa</td>
+                                        <td class="formatted-number giatien">@tinhphi.GiaTronGoi</td>
+                                        <td class="formatted-number giatien">@tinhphi.GiaGiam30</td>
+                                        <td><button id="themDichVu" onclick="chonDichVu('@tinhphi.MaDichVuTinhPhi', '@tinhphi.TenDichVu', '@tinhphi.HinhAnh', '@tinhphi.GiaGiam30', '@tinhphi.GiaLe')">CHỌN</button></td>
+
+                                    </tr>
+
+                                }
+                            }
+                        }
+
+                    </table>
+                </div>
+
+
+                @*//////////////////////////////////////////////*@
+                <div id="myDiv6">
+                    <button id="closeBtn6">X</button>
+                    <table class="equal-columns">
+                        <tr>
+                            <th>Mức bàn</th>
+                            <th>Gía trọn gói</th>
+                            <th>Giảm 30%</th>
+                            <th></th>
+                        </tr>
+                        @foreach (var dv in Model.list_dichvu)
+                        {
+                            foreach (var tinhphi in Model.list_dvtinhphi)
+                            {
+                                if (dv.MaLoaiDichVu == "L_DV0006" && tinhphi.MaDichVu == dv.MaDichVu && tinhphi.GiaLe == 0)
+                                {
+                                    <tr>
+                                        <td>@tinhphi.DieuKienBanToiThieu - @tinhphi.DieuKienBanToiDa</td>
+                                        <td class="formatted-number giatien">@tinhphi.GiaTronGoi</td>
+                                        <td class="formatted-number giatien">@tinhphi.GiaGiam30</td>
+                                        <td><button id="themDichVu" onclick="chonDichVu('@tinhphi.MaDichVuTinhPhi', '@tinhphi.TenDichVu', '@tinhphi.HinhAnh', '@tinhphi.GiaGiam30', '@tinhphi.GiaLe')">CHỌN</button></td>
+
+                                    </tr>
+
+                                }
+                            }
+                        }
+
+                        <tr>
+                            <th>Hạng mục</th>
+                            <th>Hình ảnh</th>
+                            <th>Gía lẻ</th>
+                            <th></th>
+                        </tr>
+                        @foreach (var dv in Model.list_dichvu)
+                        {
+                            foreach (var tinhphi in Model.list_dvtinhphi)
+                            {
+                                if (dv.MaLoaiDichVu == "L_DV0006" && tinhphi.MaDichVu == dv.MaDichVu && tinhphi.GiaLe != 0)
+                                {
+                                    <tr>
+                                        <td>@tinhphi.MoTa</td>
+                                        <td><img src="~/Image/@tinhphi.HinhAnh" style="width: 70px; height: 50px;" /></td>
+                                        <td class="formatted-number giatien">@tinhphi.GiaLe</td>
+                                        <td><button id="themDichVu" onclick="chonDichVu('@tinhphi.MaDichVuTinhPhi', '@tinhphi.TenDichVu', '@tinhphi.HinhAnh', '@tinhphi.GiaGiam30', '@tinhphi.GiaLe')">CHỌN</button></td>
+                                    </tr>
+
+                                }
+                            }
+                        }
+
+                    </table>
+                </div>
+
+
+                @*//////////////////////////////////////////////*@
+                <div id="myDiv7">
+                    <button id="closeBtn7">X</button>
+                    <table class="equal-columns">
+                        <tr>
+                            <th>Mức bàn</th>
+                            <th>Gía trọn gói</th>
+                            <th>Giảm 30%</th>
+                            <th></th>
+                        </tr>
+                        @foreach (var dv in Model.list_dichvu)
+                        {
+                            foreach (var tinhphi in Model.list_dvtinhphi)
+                            {
+                                if (dv.MaLoaiDichVu == "L_DV0007" && tinhphi.MaDichVu == dv.MaDichVu && tinhphi.GiaLe == 0)
+                                {
+                                    <tr>
+                                        <td>@tinhphi.DieuKienBanToiThieu - @tinhphi.DieuKienBanToiDa</td>
+                                        <td class="formatted-number giatien">@tinhphi.GiaTronGoi</td>
+                                        <td class="formatted-number giatien">@tinhphi.GiaGiam30</td>
+                                        <td><button id="themDichVu" onclick="chonDichVu('@tinhphi.MaDichVuTinhPhi', '@tinhphi.TenDichVu', '@tinhphi.HinhAnh', '@tinhphi.GiaGiam30', '@tinhphi.GiaLe')">CHỌN</button></td>
+
+                                    </tr>
+
+                                }
+                            }
+                        }
+
+                        <tr>
+                            <th>Hạng mục</th>
+                            <th>Hình ảnh</th>
+                            <th>Gía lẻ</th>
+                            <th></th>
+                        </tr>
+                        @foreach (var dv in Model.list_dichvu)
+                        {
+                            foreach (var tinhphi in Model.list_dvtinhphi)
+                            {
+                                if (dv.MaLoaiDichVu == "L_DV0007" && tinhphi.MaDichVu == dv.MaDichVu && tinhphi.GiaLe != 0)
+                                {
+                                    <tr>
+                                        <td>@tinhphi.MoTa</td>
+                                        <td><img src="~/Image/@tinhphi.HinhAnh" style="width: 70px; height: 50px;" /></td>
+                                        <td class="formatted-number giatien">@tinhphi.GiaLe</td>
+                                        <td><button id="themDichVu" onclick="chonDichVu('@tinhphi.MaDichVuTinhPhi', '@tinhphi.TenDichVu', '@tinhphi.HinhAnh', '@tinhphi.GiaGiam30', '@tinhphi.GiaLe')">CHỌN</button></td>
+                                    </tr>
+
+                                }
+                            }
+                        }
+
+                    </table>
+                </div>
+
+
+                @*//////////////////////////////////////////////*@
+                <div id="myDiv8">
+                    <button id="closeBtn8">X</button>
+                    <table class="equal-columns">
+                        <tr>
+                            <th>Mức bàn</th>
+                            <th>Gía trọn gói</th>
+                            <th>Giảm 30%</th>
+                            <th></th>
+                        </tr>
+                        @foreach (var dv in Model.list_dichvu)
+                        {
+                            foreach (var tinhphi in Model.list_dvtinhphi)
+                            {
+                                if (dv.MaLoaiDichVu == "L_DV0008" && tinhphi.MaDichVu == dv.MaDichVu && tinhphi.GiaLe == 0)
+                                {
+                                    <tr>
+                                        <td>@tinhphi.DieuKienBanToiThieu - @tinhphi.DieuKienBanToiDa</td>
+                                        <td class="formatted-number giatien">@tinhphi.GiaTronGoi</td>
+                                        <td class="formatted-number giatien">@tinhphi.GiaGiam30</td>
+                                        <td><button id="themDichVu" onclick="chonDichVu('@tinhphi.MaDichVuTinhPhi', '@tinhphi.TenDichVu', '@tinhphi.HinhAnh', '@tinhphi.GiaGiam30', '@tinhphi.GiaLe')">CHỌN</button></td>
+
+                                    </tr>
+
+                                }
+                            }
+                        }
+
+                        <tr>
+                            <th>Hạng mục</th>
+                            <th>Hình ảnh</th>
+                            <th>Gía lẻ</th>
+                            <th></th>
+                        </tr>
+                        @foreach (var dv in Model.list_dichvu)
+                        {
+                            foreach (var tinhphi in Model.list_dvtinhphi)
+                            {
+                                if (dv.MaLoaiDichVu == "L_DV0008" && tinhphi.MaDichVu == dv.MaDichVu && tinhphi.GiaLe != 0)
+                                {
+                                    <tr>
+                                        <td>@tinhphi.MoTa</td>
+                                        <td><img src="~/Image/@tinhphi.HinhAnh" style="width: 70px; height: 50px;" /></td>
+                                        <td class="formatted-number giatien">@tinhphi.GiaLe</td>
+                                        <td><button id="themDichVu" onclick="chonDichVu('@tinhphi.MaDichVuTinhPhi', '@tinhphi.TenDichVu', '@tinhphi.HinhAnh', '@tinhphi.GiaGiam30', '@tinhphi.GiaLe')">CHỌN</button></td>
+                                    </tr>
+
+                                }
+                            }
+                        }
+
+                    </table>
+                </div>
+
+
+                @*//////////////////////////////////////////////*@
+                <div id="myDiv9">
+                    <button id="closeBtn9">X</button>
+                    <table class="equal-columns">
+                        <tr>
+                            <th>Mức bàn</th>
+                            <th>Gía trọn gói</th>
+                            <th>Giảm 30%</th>
+                            <th></th>
+                        </tr>
+                        @foreach (var dv in Model.list_dichvu)
+                        {
+                            foreach (var tinhphi in Model.list_dvtinhphi)
+                            {
+                                if (dv.MaLoaiDichVu == "L_DV0009" && tinhphi.MaDichVu == dv.MaDichVu && tinhphi.GiaLe == 0)
+                                {
+                                    <tr>
+                                        <td>@tinhphi.DieuKienBanToiThieu - @tinhphi.DieuKienBanToiDa</td>
+                                        <td class="formatted-number giatien">@tinhphi.GiaTronGoi</td>
+                                        <td class="formatted-number giatien">@tinhphi.GiaGiam30</td>
+                                        <td><button id="themDichVu" onclick="chonDichVu('@tinhphi.MaDichVuTinhPhi', '@tinhphi.TenDichVu', '@tinhphi.HinhAnh', '@tinhphi.GiaGiam30', '@tinhphi.GiaLe')">CHỌN</button></td>
+
+                                    </tr>
+
+                                }
+                            }
+                        }
+
+                        <tr>
+                            <th>Hạng mục</th>
+                            <th>Hình ảnh</th>
+                            <th>Gía lẻ</th>
+                            <th></th>
+                        </tr>
+                        @foreach (var dv in Model.list_dichvu)
+                        {
+                            foreach (var tinhphi in Model.list_dvtinhphi)
+                            {
+                                if (dv.MaLoaiDichVu == "L_DV0009" && tinhphi.MaDichVu == dv.MaDichVu && tinhphi.GiaLe != 0)
+                                {
+                                    <tr>
+                                        <td>@tinhphi.MoTa</td>
+                                        <td><img src="~/Image/@tinhphi.HinhAnh" style="width: 70px; height: 50px;" /></td>
+                                        <td class="formatted-number giatien">@tinhphi.GiaLe</td>
+                                        <td><button id="themDichVu" onclick="chonDichVu('@tinhphi.MaDichVuTinhPhi', '@tinhphi.TenDichVu', '@tinhphi.HinhAnh', '@tinhphi.GiaGiam30', '@tinhphi.GiaLe')">CHỌN</button></td>
+                                    </tr>
+
+                                }
+                            }
+                        }
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="buttons">
+        <button class="Nbutton" id="prev" disabled>Quay lại</button>
+        <button class="Nbutton" id="next">Tiếp theo</button>
+    </div>
+
+    <script>
+
+        ///////////// FORMAT GIÁ //////////////
+        const numberElements = document.getElementsByClassName('formatted-number');
+
+        Array.from(numberElements).forEach((element) => {
+            const number = element.textContent;
+            const formattedNumber = addThousandsSeparator(number);
+            element.textContent = formattedNumber;
+        });
+
+        function addThousandsSeparator(number) {
+            const parts = number.toString().split('.');
+            parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+            return parts.join('.');
+        }
+
+        ////////
+
+        document.getElementById('showDivBtn4').addEventListener('click', function () {
+            document.getElementById('overlay').style.display = 'block';
+            document.getElementById('myDiv4').style.display = 'block';
+        });
+        document.getElementById('showDivBtn5').addEventListener('click', function () {
+            document.getElementById('overlay').style.display = 'block';
+            document.getElementById('myDiv5').style.display = 'block';
+        });
+        document.getElementById('showDivBtn6').addEventListener('click', function () {
+            document.getElementById('overlay').style.display = 'block';
+            document.getElementById('myDiv6').style.display = 'block';
+        });
+        document.getElementById('showDivBtn7').addEventListener('click', function () {
+            document.getElementById('overlay').style.display = 'block';
+            document.getElementById('myDiv7').style.display = 'block';
+        });
+        document.getElementById('showDivBtn8').addEventListener('click', function () {
+            document.getElementById('overlay').style.display = 'block';
+            document.getElementById('myDiv8').style.display = 'block';
+        });
+        document.getElementById('showDivBtn9').addEventListener('click', function () {
+            document.getElementById('overlay').style.display = 'block';
+            document.getElementById('myDiv9').style.display = 'block';
+        });
+
+        //////////////////////////////////
+        document.getElementById('closeBtn4').addEventListener('click', function () {
+            document.getElementById('overlay').style.display = 'none';
+            document.getElementById('myDiv4').style.display = 'none';
+        });
+        document.getElementById('closeBtn5').addEventListener('click', function () {
+            document.getElementById('overlay').style.display = 'none';
+            document.getElementById('myDiv5').style.display = 'none';
+        });
+        document.getElementById('closeBtn6').addEventListener('click', function () {
+            document.getElementById('overlay').style.display = 'none';
+            document.getElementById('myDiv6').style.display = 'none';
+        });
+        document.getElementById('closeBtn7').addEventListener('click', function () {
+            document.getElementById('overlay').style.display = 'none';
+            document.getElementById('myDiv7').style.display = 'none';
+        });
+        document.getElementById('closeBtn8').addEventListener('click', function () {
+            document.getElementById('overlay').style.display = 'none';
+            document.getElementById('myDiv8').style.display = 'none';
+        });
+        document.getElementById('closeBtn9').addEventListener('click', function () {
+            document.getElementById('overlay').style.display = 'none';
+            document.getElementById('myDiv9').style.display = 'none';
+        });
+
+
+    </script>
+    <script>
+        //DOM Elements
+        const circles = document.querySelectorAll(".circle"),
+            progressBar = document.querySelector(".indicator"),
+            buttons = document.querySelectorAll(".Nbutton"),
+            contents = document.querySelectorAll(".content");
+
+        let currentStep = 1;
+        let clickCount = 0;
+
+        const redirectToCartPage = () => {
+            console.log('Chuyển sang trang giỏ hàng...');
+            // Thực hiện chuyển trang, ví dụ:
+            window.location.href = '/GioHang/GioHang';
+            return false;
+        };
+
+        const updateSteps = (e) => {
+            if (e.target.id === "next") {
+                clickCount++;
+            } else {
+                clickCount = Math.max(clickCount - 1, 0);
+            }
+            if (clickCount == 1) {
+                sendSanhToController();
+            } else if (clickCount == 2) {
+                sendMonAnToController();
+            } else if (clickCount == 3) {
+                sendNuocToController();
+            } else if (clickCount == 4) {
+                sendDichVuToController();
+            }
+
+            currentStep = e.target.id === "next" ? ++currentStep : --currentStep;
+            circles.forEach((circle, index) => {
+                circle.classList[`${index < currentStep ? "add" : "remove"}`]("active");
+            });
+
+            progressBar.style.width = `${((currentStep - 1) / (circles.length - 1)) * 100}%`;
+            if (currentStep === circles.length + 1) {
+                buttons[1].disabled = true;
+                redirectToCartPage();
+            } else if (currentStep === 1) {
+                buttons[0].disabled = true;
+            } else {
+                buttons.forEach((button) => (button.disabled = false));
+            }
+
+            updateContent();
+        };
+
+        const updateContent = () => {
+            contents.forEach((content, index) => {
+                content.classList.toggle("active", index + 1 === currentStep);
+            });
+        };
+
+        buttons.forEach((button) => {
+            button.addEventListener("click", updateSteps);
+        });
+        updateContent();
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    @* SẢNH *@
+    <script>
+        var selectedItemsSanh = "";
+        function chonSanh(MaSanh) {
+            console.log('Button clicked. Adding to cart...');
+            selectedItemsSanh = MaSanh;
+        }
+
+        function sendSanhToController() {
+            console.log(selectedItemsSanh);
+
+            $.ajax({
+                type: 'POST',
+                url: '/GioHang/LuuThongTinSanh',
+                contentType: 'application/json; charset=utf-8',
+                data: JSON.stringify({ selectedItemsSanh: selectedItemsSanh }),
+                success: function (response) {
+                    console.log('Dữ liệu đã được gửi và lưu vào Session thành công:', response);
+                },
+                error: function (error) {
+                    console.error('Lỗi khi gửi và lưu dữ liệu vào Session:', error);
+                }
+            });
+        }
+    </script>
+
+    @* MÓN ĂN *@
+    <script>
+        var selectedItemsMonAn = [];
+
+        // Hàm thêm món ăn vào danh sách khi bấm vào button
+        function chonMonAn(MaMonAn, TenMonAn, HinhAnh, DonGia) {
+            console.log('Button clicked. Adding to cart...');
+
+            var newItem = {
+                MaMonAn: MaMonAn,
+                TenMonAn: TenMonAn,
+                HinhAnh: HinhAnh,
+                DonGia: DonGia
+            };
+            selectedItemsMonAn.push(newItem);
+        }
+
+        function sendMonAnToController() {
+            console.log(selectedItemsMonAn);
+
+            $.ajax({
+                type: 'POST',
+                url: '/GioHang/LuuThongTinMonAn',
+                contentType: 'application/json; charset=utf-8',
+                data: JSON.stringify({ selectedItemsMonAn: selectedItemsMonAn }),
+                success: function (response) {
+                    console.log('Dữ liệu đã được gửi và lưu vào Session thành công:', response);
+                },
+                error: function (error) {
+                    console.error('Lỗi khi gửi và lưu dữ liệu vào Session:', error);
+                }
+            });
+        }
+    </script>
+
+    @* NƯỚC UỐNG *@
+    <script>
+        var selectedItemsNuoc = [];
+
+        function chonNuoc(MaNuoc, TenNuoc, HinhAnh, DonGia) {
+            console.log('Button clicked. Adding to cart...');
+
+            var newItem = {
+                MaNuoc: MaNuoc,
+                TenNuoc: TenNuoc,
+                HinhAnh: HinhAnh,
+                DonGia: DonGia
+            };
+            selectedItemsNuoc.push(newItem);
+        }
+
+        function sendNuocToController() {
+            console.log(selectedItemsNuoc);
+
+            $.ajax({
+                type: 'POST',
+                url: '/GioHang/LuuThongTinNuoc',
+                contentType: 'application/json; charset=utf-8',
+                data: JSON.stringify({ selectedItemsNuoc: selectedItemsNuoc }),
+                success: function (response) {
+                    console.log('Dữ liệu đã được gửi và lưu vào Session thành công:', response);
+                },
+                error: function (error) {
+                    console.error('Lỗi khi gửi và lưu dữ liệu vào Session:', error);
+                }
+            });
+        }
+    </script>
+
+    @* DỊCH VỤ *@
+    <script>
+        var selectedItemsDV = [];
+
+        function chonDichVu(MaDichVuTinhPhi, TenDichVu, HinhAnh, GiaGiam30, GiaLe) {
+            console.log('Button clicked. Adding to cart...');
+
+            var newItem = {
+                MaDichVuTinhPhi: MaDichVuTinhPhi,
+                TenDichVu: TenDichVu,
+                HinhAnh: HinhAnh,
+                GiaGiam30: GiaGiam30,
+                GiaLe: GiaLe,
+            };
+            selectedItemsDV.push(newItem);
+        }
+
+        function sendDichVuToController() {
+            console.log(selectedItemsDV);
+
+            $.ajax({
+                type: 'POST',
+                url: '/GioHang/LuuThongTinDichVu',
+                contentType: 'application/json; charset=utf-8',
+                data: JSON.stringify({ selectedItemsDV: selectedItemsDV }),
+                success: function (response) {
+                    console.log('Dữ liệu đã được gửi và lưu vào Session thành công:', response);
+                },
+                error: function (error) {
+                    console.error('Lỗi khi gửi và lưu dữ liệu vào Session:', error);
+                }
+            });
+        }
+    </script>
+</body>
+</html>

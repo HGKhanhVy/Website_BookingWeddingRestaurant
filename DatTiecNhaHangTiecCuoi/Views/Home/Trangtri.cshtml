@@ -5,78 +5,88 @@
 }
 
 <style>
-    .div_img {
-        width: 300px;
-        height: 300px;
-        border-radius: 200px 200px;
-        border: 1px solid;
-        position: relative;
-        animation-name: bounce_soft;
-        animation-iteration-count: infinite;
-        /*position: relative;
-        left: 0;
-        top: 0;*/
+    .div_banner {
+        width: 100%;
+        height: 500px;
     }
+
+    .img_banner {
+        width: 100%;
+        height: 500px;
+    }
+
+    table {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+    }
+
+    td {
+        padding: 10px 10px;
+    }
+
+        td div {
+            background-color: #ffffff;
+            width: 320px;
+            height: 220px;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 7px;
+        }
+
+            td div img {
+                width: 300px;
+                height: 200px;
+                margin-top: 10px;
+            }
+
+        td a {
+            font-weight: bold;
+            color: #000000;
+            text-decoration: none;
+            margin-bottom: 7px;
+        }
 </style>
 
-<div class="container-fluid" style="padding: 40px 20px; margin: 0 auto; ">
-    <table style="width: 1000px; height: auto; margin: 0 auto; padding: 20px 20px; ">
-        <tr class="col-lg-12" style="padding: 20px 0px;">
-            <td class="col-lg-3 ">
-                <img src="~/Image/TrangTri/JUST_A_MOMENT/J_1.jpg" class="div_img" />
-            </td>
-            <td class="col-lg-3 ">
-                <img src="~/Image/TrangTri/THE_ENCHANTED_FOREST/The_1.jpg" class="div_img" />
-            </td>
-            <td class="col-lg-3 ">
-                <img src="~/Image/TrangTri/OCEAN_OF_LOVE/O_1.jpg" class="div_img" />
-            </td>
-        </tr>
-        <tr class="col-lg-12" style="padding: 20px 0px;">
-            <td class="col-lg-3 ">
-                <img src="~/Image/TrangTri/TIAMO/T_1.jpg" class="div_img" />
-            </td>
-            <td class="col-lg-3 ">
-                <img src="~/Image/TrangTri/WHEN_LOVE_BLOSSOMS/W_1.jpg" class="div_img" />
-            </td>
-            <td class="col-lg-3 ">
-                <div class="div_img" style=" background-color:hotpink;"> </div>
-            </td>
+<div class="div_banner">
+    <img src="~/Image/AnhMonAn/banner.jpg" class="img_banner" />
+</div>
 
+<div>
+    <table>
+        <tr>
+            <td>
+                <div>
+                    <img src="~/Image/AnhGoiTrangTri/tiamo.jpg" />
+                </div>
+                <a href="#">GÓI TRANG TRÍ ĐẶC BIỆT - TIAMO</a>
+            </td>
+            <td>
+                <div>
+                    <img src="~/Image/AnhGoiTrangTri/oceanoflove.jpg" />
+                </div>
+                <a href="#">GÓI TRANG TRÍ ĐẶC BIỆT - OCEAN OF LOVE</a>
+            </td>
+            <td>
+                <div>
+                    <img src="~/Image/AnhGoiTrangTri/just a moment.jpg" />
+                </div>
+                <a href="#">GÓI TRANG TRÍ ĐẶC BIỆT - JUST A MOMENT</a>
+            </td>
         </tr>
+        <tr>
+            <td>
+                <div>
+                    <img src="~/Image/AnhGoiTrangTri/forget.jpg" />
+                </div>
+                <a href="#">GÓI TRANG TRÍ ĐẶC BIỆT - THE ENCHANTED FOREST</a>
+            </td>
+            <td>
+                <div>
+                    <img src="~/Image/AnhGoiTrangTri/when love.jpg" />
+                </div>
+                <a href="#">GÓI TRANG TRÍ ĐẶC BIỆT - WHEN LOVE BLOSSOMS</a>
+            </td>
 
     </table>
 </div>
-
-<script>
-    //var img = document.getElementsByTagName('img')[0];
-    //var img = document.getElementsByTagName('img')[1];
-    //var img = document.getElementsByTagName('img')[2];
-    //var topPos = 0;
-    //var dir = 1;
-
-    //function moveImg() {
-    //    topPos += dir;
-    //    img.style.top = topPos + 'px';
-    //    if (topPos > 100 || topPos < 0) {
-    //        dir = -dir;
-    //    }
-    //}
-    //setInterval(moveImg, 20);
-
-    var images = document.getElementsByTagName('img');
-    var leftPos = 0;
-    var dir = 1;
-
-    function moveImages() {
-        leftPos += dir;
-        for (var i = 0; i < images.length; i++) {
-            images[i].style.left = leftPos + 'px';
-        }
-        if (leftPos > 100 || leftPos < 0) {
-            dir = -dir;
-        }
-    }
-
-    setInterval(moveImages, 20);
-</script>

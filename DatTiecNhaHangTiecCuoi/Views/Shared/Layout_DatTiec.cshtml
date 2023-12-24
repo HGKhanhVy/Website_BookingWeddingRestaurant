@@ -1,0 +1,171 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Layout_DatTiec</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            position: relative;
+            width: 100%;
+            min-height: 150vh;
+        }
+
+        nav {
+            position: fixed;
+            width: 250px;
+            height: 100%;
+            background: #f1f1f1;
+            display: flex;
+            align-items: center;
+            border-right: 1px solid rgba(0,0,0,0.1);
+            z-index: 1000;
+            transition: ease-in-out 0.5s;
+        }
+
+            nav.hide {
+                width: 0;
+            }
+
+            nav ul {
+                width: 100%;
+                list-style: none;
+                overflow: hidden;
+            }
+
+                nav ul li a {
+                    width: 100%;
+                    color: #1e90ff;
+                    font-size: 1.2em;
+                    text-decoration: none;
+                    display: inline-flex;
+                    align-items: center;
+                    padding: 15px;
+                    transition: linear 0.5s;
+                }
+
+                    nav ul li a ion-icon {
+                        margin: 0 20px;
+                        color: #1e90ff;
+                        font-size: 1.2em;
+                        transition: linear 0.2s;
+                    }
+
+                    nav ul li a:hover {
+                        background: #1e90ff;
+                        color: white;
+                    }
+
+                        nav ul li a:hover ion-icon {
+                            color: white;
+                        }
+
+        .content {
+            position: absolute;
+            top: 0;
+            left: 250px;
+            width: calc(100% - 250px);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            transition: ease-in-out 0.5s;
+        }
+
+            .content.expand {
+                width: 100%;
+                left: 0;
+            }
+
+        nav .toggle_menu {
+            position: absolute;
+            top: 20px;
+            right: -46px;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #f1f1f1;
+            border-radius: 0 10px 10px 0;
+            cursor: pointer;
+            transition: linear 0.2s;
+        }
+
+            nav .toggle_menu ion-icon {
+                color: #1e90ff;
+                font-size: 1.5em;
+                transition: linear 0.2s;
+            }
+
+            nav .toggle_menu:hover {
+                background: #1e90ff;
+            }
+
+                nav .toggle_menu:hover ion-icon {
+                    color: white;
+                }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="toggle_menu"><ion-icon name="menu-outline"></ion-icon></div>
+        <ul>
+            <li><a href="/LichSanh/GetLichSanh"><ion-icon name="calendar-outline"></ion-icon>XEM SẢNH</a></li>
+            <li><a href="/LoaiDichVu/GetAll"><ion-icon name="layers-outline"></ion-icon>DỊCH VỤ</a></li>
+            @*<li><a href="/MonAn_Menu/GetMonAn_Menu"><ion-icon name="grid-outline"></ion-icon>MENU</a></li>*@
+            <li><a href="/DatMonAn/GetDatMon"><ion-icon name="fish-outline"></ion-icon>MÓN ĂN</a></li>
+            <li><a href="/DatMonAn/GetDatNuoc"><ion-icon name="beer-outline"></ion-icon>THỨC UỐNG</a></li>
+            <li><a href="/GioHang/GioHang"><ion-icon name="cart-outline"></ion-icon>GIỎ HÀNG</a></li>
+        </ul>
+    </nav>
+    <section class="content">
+        @RenderBody()
+    </section>
+</body>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script>
+    const nav = document.querySelector('nav');
+    const toggle_menu = document.querySelector('.toggle_menu');
+    const content = document.querySelector('.content');
+
+    toggle_menu.onclick = function () {
+        nav.classList.toggle('hide');
+        content.classList.toggle('expand');
+    }
+</script>
+<script>
+    $(document).ready(function () {
+        $('.menu-heading').click(function () {
+            $(this).siblings('.submenu').slideToggle('fast');
+        });
+    });
+    function toggleItems(event, spanId) {
+        var spanItems = document.getElementById(spanId + '-items');
+        var allItemContainers = document.getElementsByClassName('item-container');
+
+        // Ẩn tất cả các div chứa các item
+        for (var i = 0; i < allItemContainers.length; i++) {
+            allItemContainers[i].style.display = 'none';
+        }
+
+        // Hiển thị div chứa các item của span được nhấn
+        spanItems.style.display = 'block';
+
+        // Ngăn chặn sự kiện click lan ra các phần tử cha
+        event.stopPropagation();
+    }
+</script>
+</html>

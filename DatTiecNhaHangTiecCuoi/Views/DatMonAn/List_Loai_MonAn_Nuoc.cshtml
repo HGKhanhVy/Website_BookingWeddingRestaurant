@@ -1,0 +1,281 @@
+﻿@model DatTiecNhaHangTiecCuoi.Models.List_Loai_MonAn_Nuoc
+@{
+    ViewBag.Title = "List_Loai_MonAn_Nuoc";
+    Layout = "~/Views/Shared/Layout_DatTiec.cshtml";
+}
+<style>
+    .div_khung {
+        /*background-color: white;*/
+        width: 100%;
+    }
+
+    button {
+        background-color: #198975;
+        display: flex;
+        justify-items: right;
+    }
+
+    td {
+        width: 100%;
+        border-bottom: 1px solid;
+        padding: 10px 50px;
+        background-color: white;
+        opacity: 0.7;
+        font-weight: bold;
+    }
+
+    .b_text {
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        color: white;
+        background-color: #c77408;
+    }
+
+    .hinh {
+        width: 100px;
+        height: 100px;
+    }
+</style>
+
+<div class="div_khung">
+    <div>
+        <b class="b_text">BÁNH MẶN KHAI VỊ</b>
+    </div>
+    <table class="table">
+        @foreach (var item in Model.list_monan)
+        {
+            if (item.MaLoaiMonAn == "L-MA0001")
+            {
+
+                <tr>
+                    <td><img src="~/Image/AnhMonAn/@item.HinhAnh" class="hinh" /></td>
+                    <td>@item.TenMonAn </td>
+                    <td><button>CHỌN</button> </td>
+                </tr>
+            }
+        }
+    </table>
+
+    <div>
+        <b class="b_text">KHAI VỊ 02 MÓN</b>
+    </div>
+    <table class="table">
+        @foreach (var item in Model.list_monan)
+        {
+            if (item.MaMonAn == "L_DV0002")
+            {
+
+                <tr>
+                    <td><img src="~/Image/AnhMonAn/@item.HinhAnh" class="hinh" /></td>
+                    <td>@item.TenMonAn </td>
+                    <td><button>CHỌN</button> </td>
+                </tr>
+            }
+        }
+    </table>
+
+    <div>
+        <b class="b_text">MÓN SOUP</b>
+    </div>
+    <table class="table">
+        @foreach (var item in Model.list_monan)
+        {
+            if (item.MaMonAn == "L_DV0003")
+            {
+
+                <tr>
+                    <td><img src="~/Image/AnhMonAn/@item.HinhAnh" class="hinh" /></td>
+                    <td>-@item.TenMonAn </td>
+                    <td><button>CHỌN</button> </td>
+                </tr>
+            }
+        }
+    </table>
+
+
+    <div>
+        <b class="b_text">MÓN TÔM - BÀO NGƯ</b>
+    </div>
+    <table class="table">
+        @foreach (var item in Model.list_monan)
+        {
+            if (item.MaMonAn == "L_DV0004")
+            {
+
+                <tr>
+                    <td><img src="~/Image/AnhMonAn/@item.HinhAnh" class="hinh" /></td>
+                    <td>-@item.TenMonAn </td>
+                    <td><button>CHỌN</button> </td>
+                </tr>
+            }
+        }
+    </table>
+
+    <div>
+        <b class="b_text">MÓN CUA</b>
+    </div>
+    <table class="table">
+        @foreach (var item in Model.list_monan)
+        {
+            if (item.MaMonAn == "L_DV0005")
+            {
+
+                <tr>
+                    <td><img src="~/Image/AnhMonAn/@item.HinhAnh" class="hinh" /></td>
+                    <td>-@item.TenMonAn </td>
+                    <td><button>CHỌN</button> </td>
+                </tr>
+            }
+        }
+    </table>
+
+
+    <div>
+        <b class="b_text">MÓN CÁ</b>
+    </div>
+    <table class="table">
+        @foreach (var item in Model.list_monan)
+        {
+            if (item.MaMonAn == "L_DV0006")
+            {
+
+                <tr>
+                    <td><img src="~/Image/AnhMonAn/@item.HinhAnh" class="hinh" /></td>
+                    <td>-@item.TenMonAn </td>
+                    <td><button>CHỌN</button> </td>
+                </tr>
+            }
+        }
+    </table>
+
+    <div>
+        <b class="b_text">MÓN BÒ - ĐÀ ĐIỂU</b>
+    </div>
+    <table class="table">
+        @foreach (var item in Model.list_monan)
+        {
+            if (item.MaMonAn == "L_DV0007")
+            {
+
+                <tr>
+                    <td><img src="~/Image/AnhMonAn/@item.HinhAnh" class="hinh" /></td>
+                    <td>-@item.TenMonAn </td>
+                    <td><button>CHỌN</button> </td>
+                </tr>
+            }
+        }
+    </table>
+
+
+    <div>
+        <b class="b_text">MÓN HEO</b>
+    </div>
+    <table class="table">
+        @foreach (var item in Model.list_monan)
+        {
+            if (item.MaMonAn == "L_DV0008")
+            {
+
+                <tr>
+                    <td><img src="~/Image/AnhMonAn/@item.HinhAnh" class="hinh" /></td>
+                    <td>-@item.TenMonAn </td>
+                    <td><button>CHỌN</button> </td>
+                </tr>
+            }
+        }
+    </table>
+
+    <div>
+        <b class="b_text">MÓN GÀ - VỊT - BỒ CÂU</b>
+    </div>
+    <table class="table">
+        @foreach (var item in Model.list_monan)
+        {
+            if (item.MaMonAn == "L_DV0009")
+            {
+
+                <tr>
+                    <td><img src="~/Image/AnhMonAn/@item.HinhAnh" class="hinh" /></td>
+                    <td>-@item.TenMonAn </td>
+                    <td><button>CHỌN</button> </td>
+                </tr>
+            }
+        }
+    </table>
+
+    <div>
+        <b class="b_text">CƠM MÌ- BÚN - MIẾN</b>
+    </div>
+    <table class="table">
+        @foreach (var item in Model.list_monan)
+        {
+            if (item.MaMonAn == "L_DV0010")
+            {
+
+                <tr>
+                    <td><img src="~/Image/AnhMonAn/@item.HinhAnh" class="hinh" /></td>
+                    <td>-@item.TenMonAn </td>
+                    <td><button>CHỌN</button> </td>
+                </tr>
+            }
+        }
+    </table>
+
+
+    <div>
+        <b class="b_text">MÓN ĂN KÈM</b>
+    </div>
+    <table class="table">
+        @foreach (var item in Model.list_monan)
+        {
+            if (item.MaMonAn == "L_DV0011")
+            {
+
+                <tr>
+                    <td><img src="~/Image/AnhMonAn/@item.HinhAnh" class="hinh" /></td>
+                    <td>-@item.TenMonAn </td>
+                    <td><button>CHỌN</button> </td>
+                </tr>
+            }
+        }
+    </table>
+
+    <div>
+        <b class="b_text">MÓN LẨU</b>
+    </div>
+    <table class="table">
+        @foreach (var item in Model.list_monan)
+        {
+            if (item.MaMonAn == "L_DV0012")
+            {
+
+                <tr>
+                    <td><img src="~/Image/AnhMonAn/@item.HinhAnh" class="hinh" /></td>
+                    <td>-@item.TenMonAn </td>
+                    <td><button>CHỌN</button> </td>
+                </tr>
+            }
+        }
+    </table>
+
+    <div>
+        <b class="b_text">MÓN TRÁNG MIỆNG</b>
+    </div>
+    <table class="table">
+        @foreach (var item in Model.list_monan)
+        {
+            if (item.MaMonAn == "L_DV0013")
+            {
+
+                <tr>
+                    <td><img src="~/Image/AnhMonAn/@item.HinhAnh" class="hinh" /></td>
+                    <td>-@item.TenMonAn </td>
+                    <td><button>CHỌN</button> </td>
+                </tr>
+            }
+        }
+    </table>
+
+</div>

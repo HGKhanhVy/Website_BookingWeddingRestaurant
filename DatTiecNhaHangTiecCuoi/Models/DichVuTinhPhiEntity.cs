@@ -16,5 +16,10 @@ namespace DatTiecNhaHangTiecCuoi.Models
         public string HinhAnh { get; set; }
         public double DonGiaDichVu { get; set; }
         public string MaDichVu { get; set; }
+        public int DieuKienBanToiThieu { get; set; }
+        public int DieuKienBanToiDa { get; set; }
+        public double GiaTronGoi { get; set; }
+        public double GiaGiam30 { get; set; }
+        public double GiaLe { get; set; }
     }
 }

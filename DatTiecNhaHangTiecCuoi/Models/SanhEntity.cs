@@ -15,5 +15,6 @@ namespace DatTiecNhaHangTiecCuoi.Models
         public string HinhAnh { get; set; }
         public int SucChuaToiThieu { get; set;}
         public int SucChuaToiDa { get; set; }
+        public string TrangThai { get; set; }
     }
 }
